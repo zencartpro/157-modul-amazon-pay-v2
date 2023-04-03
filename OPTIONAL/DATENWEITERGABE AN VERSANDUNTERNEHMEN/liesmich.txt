@@ -1,0 +1,1 @@
+Falls Sie das Modul Datenweitergabe für Versandunternehmen aktiv haben, verwenden Sie die Dateien in diesem Ordner für das Amazon Pay V2 Modul!
