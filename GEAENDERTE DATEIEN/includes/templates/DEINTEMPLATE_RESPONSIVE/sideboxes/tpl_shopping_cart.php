@@ -2,11 +2,11 @@
 /**
  * Side Box Template
  * 
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2023 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_shopping_cart.php for Amazon Pay V2 2022-03-26 14:51:16Z webchills $
+ * @version $Id: tpl_shopping_cart.php for Amazon Pay V2 2023-04-04 09:55:16Z webchills $
  */
   $content ="";
 
@@ -61,7 +61,9 @@
   }
   
    if (isset($_SESSION['amazonpaylogin']) && $_SESSION['amazonpaylogin'] == true) {
+   if (!in_array($current_page_base,explode(",",'checkout_shipping_amazon,checkout_payment_amazon,checkout_confirmation_amazon')) ) {
 $content .= '<div class="amazon-pay-button" style="float:right;"></div>';
+}
 } else {
 	$content .= '<div class="amazon-login-button" style="float:right;"></div>';
 }

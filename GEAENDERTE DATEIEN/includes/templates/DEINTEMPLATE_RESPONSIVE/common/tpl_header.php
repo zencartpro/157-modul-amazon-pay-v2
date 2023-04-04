@@ -11,11 +11,11 @@
  * $flag_disable_header = true;
  *
  * Zen Cart German Specific (158 code in 157)
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2023 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_header.php 2022-12-08 20:52:58Z webchills $
+ * @version $Id: tpl_header.php for Amazon Pay V2 2023-04-04 09:40:58Z webchills $
  */
 ?>
 
@@ -88,8 +88,9 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     
     <!--bof Amazon Pay V2-->
   <?php if (isset($_SESSION['amazonpaylogin']) && $_SESSION['amazonpaylogin'] == true) {?>
-    	 <li class="last"><span class="amazon-pay-button" style="max-width:170px; margin-left:5px; vertical-align:top;"></span></li>
-    	 
+  	<?php if (!in_array($current_page_base,explode(",",'checkout_shipping_amazon,checkout_payment_amazon,checkout_confirmation_amazon')) ) {?>
+    	 <li class="last"><span class="amazon-pay-button" style="max-width:140px; margin-left:5px; vertical-align:top;"></span></li>
+    	 <?php } ?>
     	 <?php } else { ?>
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-check-square" title="Checkout"></i></a></li>
      <?php } ?>
@@ -145,10 +146,11 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     </li>
     <!--bof Amazon Pay V2-->
   <?php if (isset($_SESSION['amazonpaylogin']) && $_SESSION['amazonpaylogin'] == true) {?>
-    	 <li class="last"><span class="amazon-pay-button" style="max-width:170px; margin-left:5px; vertical-align:top;"></span></li>
-    	 
+  	<?php if (!in_array($current_page_base,explode(",",'checkout_shipping_amazon,checkout_payment_amazon,checkout_confirmation_amazon')) ) {?>
+    	 <li class="last"><span class="amazon-pay-button" style="max-width:140px; margin-left:5px; vertical-align:top;"></span></li>
+    	 <?php } ?>
     	 <?php } else { ?>
-    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
+    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-check-square" title="Checkout"></i></a></li>
      <?php } ?>
      <!--eof Amazon Pay V2-->
     
@@ -199,12 +201,13 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
      ?>
    </a>
    </li>
-   <!--bof Amazon Pay V2-->
+<!--bof Amazon Pay V2-->
   <?php if (isset($_SESSION['amazonpaylogin']) && $_SESSION['amazonpaylogin'] == true) {?>
-    	 <li class="last"><span class="amazon-pay-button" style="max-width:170px; margin-left:5px; vertical-align:top;"></span></li>
-    	 
+  	<?php if (!in_array($current_page_base,explode(",",'checkout_shipping_amazon,checkout_payment_amazon,checkout_confirmation_amazon')) ) {?>
+    	 <li class="last"><span class="amazon-pay-button" style="max-width:170px; margin-left:5px;"></span></li>
+    	 <?php } ?>
     	 <?php } else { ?>
-    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
+    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-check-square" title="Checkout"></i></a></li>
      <?php } ?>
      <!--eof Amazon Pay V2-->
 <?php }?>
