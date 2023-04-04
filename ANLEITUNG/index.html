@@ -38,10 +38,41 @@
 
 <h2>Sinn und Zweck dieses Moduls</h2>
 
-  <p dir="auto">Mit diesem Modul wird Zahlung via Amazon Pay im Shop integriert.<br>
+  <p >Mit diesem Modul wird Zahlung via Amazon Pay im Shop integriert.<br>
     Kunden können direkt mit ihrem Amazon Konto einloggen und dann die in ihrem Amazon Account hinterlegte Zahlungsart verwenden.<br>
-    Dieses Modul verwendet Amazon Pay Checkout V2 und unterstützt die SCA (Strong Customer Authentication).  </p>
-  <p dir="auto">&nbsp;</p>
+    Dieses Modul verwendet Amazon Pay Checkout V2 und unterstützt die SCA (Strong Customer Authentication).  <br/>    
+    Es werden keinerlei Daten zu den bestellten Artikeln an Amazon übermittelt, lediglich der Bestellbetrag für die Zahlungsabwicklung</p>
+
+<p><strong>Voraussetzungen:</strong></p>
+<ul>
+  <li>
+  Freigeschalteter Amazon Seller Account in EU oder UK</li>
+  <li>    Konfiguration der erforderlichen API Keys im Seller Account (siehe Vorbereitungen)</li>
+  <li>    Zen Cart 1.5.7f deutsche Version</li>
+  <li>    Shop verwendet durchgehend https
+    </li>
+  <li>    PHP mindestens 7.4.x, empfohlen 8.0.x
+  </li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+  <li>
+  Zahlungen werden sofort autorisiert und eingezogen (capture)
+    </li>
+  <li>    Zahlungen können bei Bedarf via Shopadministration rückerstattet werden (ähnlich wie bei der PayPal Express Integration)</li>
+  <li>    komplette Sandbox Unterstützung, so dass alles im Sandbox Modus getestet werden kann
+    </li>
+  <li>    getrennter Checkout für Amazon Pay und normale Zahlungsarten um möglichst wenig in die bestehende Funktionalität einzugreifen</li>
+  <li>    Verwendung des aktuellen Amazon Pay API SDK PHP 2.6.1
+    </li>
+  <li>    Übersicht der Amazon Pay Transaktionen filterbar nach Status in der Zen Cart Administration
+    </li>
+  <li>    Kennzeichnung in der Kundenübersicht ob ein Kundenkonto normal im Shop oder automatisch via Amazon Pay erstellt wurde</li>
+  <li>    Unterstützung von Zen Cart Gutscheinguthaben und Aktionskupons Funktionalität</li>
+  <li>    Unterstützung von Downloadartikeln
+  </li>
+</ul>
+<p dir="auto">&nbsp;</p>
 <h3>Changelog, Copyright,  Lizenz, Credits</h3>
 <p>  <strong>Changelog</strong><br>
 Version 1.0.0<br>
@@ -72,8 +103,7 @@ Version 1.0.0<br>
     Grundlage war das entsprechende Github Repository:<br>
     <a href="https://github.com/AlkimMedia/AmazonPay_Modified_2060" target="_blank">https://github.com/AlkimMedia/AmazonPay_Modified_2060</a>
     </p>
-    <br>
-    <br>
+    
   </p>
 </div>
 </div>
@@ -85,11 +115,13 @@ Version 1.0.0<br>
 <div class="regularlist">
 
 <h2>Vorbereitungen bei Amazon</h2>
+<br/><br/>
 <div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
   </strong></a></div>
+  <br/><br/>
 <p>Bevor Sie dieses Modul installieren können, nehmen Sie zunächst grundlegende wichtige Einstellungen in Ihrem Amazon Seller Central Account vor. Loggen Sie sich also zunächst in Ihren Account ein auf:<br/>
   <a href="https://sellercentral-europe.amazon.com/home" target="_blank">https://sellercentral-europe.amazon.com/home</a><br>
   Dort gibt es getrennte Umgebungen für Sandbox und Produktivsystem.<br>
@@ -133,11 +165,11 @@ Version 1.0.0<br>
   Prüfen Sie Ihre Konfiguration nun nochmal, es sollte nun so aussehen und Ihnen wird Ihre Client ID / Store ID angezeigt:<br>
   <br>
   <img src="images/amazonpayv2-10.jpg" width="605" height="790"  alt=""/></p>
-<p>Kopieren Sie sich die Client-ID/Store-ID in eine Textdatei, Sie müssen diese ID später in Ihrem zen Cart Shop hinterlegen.<br>
+<p>Kopieren Sie sich die Client-ID/Store-ID in eine Textdatei, Sie müssen diese ID später in Ihrem Zen Cart Shop hinterlegen.<br>
 </p>
 <p><strong>2) API Anmeldedaten für Sandbox erstellen in Integration Central</strong><br>
   <br>
-  Gehen Sie nun (weiterhin in der Sandbox Ansicht) auf Integration Central:</p>
+  Gehen Sie nun (weiterhin in der Sandbox Ansicht) auf Integration Central.</p>
 <p>Wählen Sie bei E-Commerce Anbieter oder Integrationstyp:<br>
 Selbst entwickelt<br>
 <br>
@@ -166,6 +198,7 @@ Einmalzahlung  <br>
   <br>
   <img src="images/amazonpayv2-4.jpg" width="703" height="197"  alt=""/><br>
   <br>
+  Da es sich um einen Sandbox Schlüssel handelt beginnt die Public Key ID mit SANDBOX-<br/>
   Kopieren Sie sich die Public-Key-ID wieder in Ihre Textdatei, Sie müssen Sie später in Ihrem Zen Cart Shop hinterlegen.
 <br>
   <br>
@@ -173,9 +206,8 @@ Einmalzahlung  <br>
   gestartet.<br>
   <br>
   Gehen Sie also nun in Ihren Download Ordner, dort sollte sich diese .pem Datei nun befinden.<br>
-  Benennen Sie diese Datei nun um von AmazonPay_SANDBOX-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br>
-  private-SANDBOX.pem
-  <br>
+  Benennen Sie diese Datei nun um von AmazonPay_SANDBOX-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br><br/>
+  <strong>private-SANDBOX.pem</strong><br><br/>
   Sie müssen diese Datei später per FTP in Ihren Zen Cart Shop hochladen.<br>
   <br>
   Damit haben Sie nun schon einmal Ihre Sandbox Umgebung fertig vorbereitet.<br>
@@ -199,7 +231,7 @@ Einmalzahlung  <br>
   <img src="images/amazonpayv2-8.jpg" width="758" height="408"  alt=""/></p>
 <p>Nennen Sie den Schlüssel diesmal z.B. meinshoplive<br>
   <br>
-  Nach der erstellung wird Ihnen die Public Key ID für den Livebetrieb angezeigt, sie beginnt diesmal mit LIVE-:<br>
+  Nach der Erstellung wird Ihnen die Public Key ID für den Livebetrieb angezeigt, sie beginnt diesmal mit LIVE-:<br>
   <br>
   <img src="images/amazonpayv2-9.jpg" width="694" height="199"  alt=""/><br>
   <br>
@@ -211,8 +243,8 @@ Einmalzahlung  <br>
   Gehen Sie wieder in Ihren Download Ordner.
 <br>
   <br>
-  Benennen Sie diese Datei nun um von AmazonPay_LIVE-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br>
-private-LIVE.pem <br>
+  Benennen Sie diese Datei nun um von AmazonPay_LIVE-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br><br/>
+<b>private-LIVE.pem</b> <br><br/>
 Sie müssen diese Datei später per FTP in Ihren Zen Cart Shop hochladen.<br>
 <br>
 Nun sind Sie in Ihrem Seller Central Account fertig und sollten nun Folgendes zur Hand haben:<br>
@@ -227,8 +259,7 @@ Zwei Zertifikatsdateien:<br>
 private-SANDBOX.pem<br>
 private-LIVE.pem<br>
 <br>
-Nun können Sie das Modul in Ihrem Shop wie unter Neuinstallation beschrieben installieren.</p>
-<br/><br/>
+Nun können Sie das Modul in Ihrem Shop wie unter Installation beschrieben installieren.</p>
 </div>
 </div>
 </div>
@@ -238,16 +269,18 @@ Nun können Sie das Modul in Ihrem Shop wie unter Neuinstallation beschrieben in
 <div class="textcontent">
 <div class="regularlist">
 
-<h2>Neuinstallation</h2>
+<h2>Installation</h2>
+<br/>
 <div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
   </strong></a></div>
+  <br/>
 <h3>Voraussetzungen</h3>
-  <br>
-  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7f deutsch geeignet</strong>.<br>
-    <br>
+  
+  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7f deutsch geeignet</strong>.<br>Der Shop muss durchgehend https verwenden.
+    <br><br/>
     <strong>WICHTIG:</strong><br>    
     Für den Einbau dieses Moduls sollten Sie über folgende Werkzeuge verfügen:<br>
   <br>
@@ -299,7 +332,8 @@ Dann nun alle Dateien/Ordner aus dem Ordner NEUE DATEIEN in der vorgegebenen Str
   und<br>
   private-LIVE.pem<br>
   Laden Sie beide in exakt dieses Verzeichnis Ihres Shops hoch:<br>
-  includes/modules/payment/amazon_pay_v2/keys
+  includes/modules/payment/amazon_pay_v2/keys<br/><br/>
+  Dort befinden sich bereits 2 Dummy Dateien mit demselben Namen, überschreiben Sie sie.
   <br>
   <br>
   6)<br>
@@ -316,10 +350,10 @@ Wenn Sie Zen Cart 1.5.7 schon länger im Einsatz haben und schon einmal     Änd
 Vergleichen Sie stattdessen alle Dateien im Ordner GEAENDERTE DATEIEN mit den     entsprechenden Dateien in Ihrem Shop und nehmen Sie die Änderungen     manuell per WinMerge oder BeyondCompare vor.<br>
 Dann spielen Sie die geänderten Dateien in der gezeigten Struktur ein. <br>
 <br>
-<strong>WICHTIG:<br>
- Falls Sie das Modul Bestellen ohne Kundenkonto (COWOA) aktiv haben, verwenden Sie die Dateien im Ordner OPTIONAL/COWOA für das Amazon Pay V2 Modul!
+<strong>WICHTIG:</strong><br/>
+ Falls Sie das Modul <b>Bestellen ohne Kundenkonto (COWOA)</b> aktiv haben, verwenden Sie die Dateien im Ordner OPTIONAL/COWOA für das Amazon Pay V2 Modul!
  <br>
- Falls Sie das Modul Datenweitergabe für Versandunternehmen aktiv haben, verwenden Sie die Dateien im Ordner OPTIONAL/DATENWEITERGABE AN VERSANDUNTERNEHMEN für das Amazon Pay V2 Modul! </strong><br>
+ Falls Sie das Modul <b>Datenweitergabe für Versandunternehmen</b> aktiv haben, verwenden Sie die Dateien im Ordner OPTIONAL/DATENWEITERGABE AN VERSANDUNTERNEHMEN für das Amazon Pay V2 Modul!<br>
 <br>
 8)<br>
 Nehmen Sie nun unter Konfiguration &gt; Amazon Pay V2 Grundeinstellungen die nötigen Einstellungen vor.</p>
@@ -335,11 +369,13 @@ Nehmen Sie nun unter Konfiguration &gt; Amazon Pay V2 Grundeinstellungen die nö
 <div class="regularlist">
 
 <h2>KONFIGURATION</h2>
+<br/>
 <div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
   </strong></a></div>
+  <br/>
 <p><b><br>
   Einstellungsmöglichkeiten in der Zen Cart Administration</b></p>
 <p> Unter Konfiguration &gt; Amazon Pay V2 Grundeinstellungen sind folgende Optionen verfügbar:<br>
