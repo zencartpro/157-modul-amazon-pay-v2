@@ -30,3 +30,4 @@ file_put_contents($blockFile, date('Y-m-d H:i:s'));
 require_once 'includes/modules/payment/amazon_pay_v2/amazon_pay_v2.php';
 $transactionHelper = new \ZencartAmazonPayV2\Helpers\TransactionHelper();
 $transactionHelper->doCron();
+echo '<p>Statusaktualisierung angestossen</p>';

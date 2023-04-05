@@ -1,1 +1,2 @@
-Falls Sie das Modul Bestellen ohne Kundenkonto (COWOA) aktiv haben, verwenden Sie die Dateien in diesem Ordner für das Amazon Pay V2 Modul!
+Falls Sie das Modul Bestellen ohne Kundenkonto (COWOA) aktiv haben, passen Sie nun in einem zweiten Schritt weitere Dateien an!
+Vorlagen für die zu ändernden Dateien finden Sie in diesem Ordner.

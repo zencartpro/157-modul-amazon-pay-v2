@@ -15,7 +15,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_header.php for Amazon Pay V2 2023-04-05 19:52:58Z webchills $
+ * @version $Id: tpl_header.php for Amazon Pay V2 and COWOA 2023-04-05 19:13:58Z webchills $
  */
 ?>
 
@@ -48,7 +48,9 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
     if (zen_is_logged_in() && !zen_in_guest_checkout()) {
 ?>
     <li><a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGOFF; ?></a></li>
+<?php if (!$_SESSION['COWOA'] && $_SESSION['COWOA'] == false) { ?>
     <li><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><?php echo HEADER_TITLE_MY_ACCOUNT; ?></a></li>
+    <?php } ?>
 <?php
       } else {
         if (STORE_STATUS == '0') {
@@ -67,7 +69,6 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
     <li><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
      <?php } ?>
      <!--eof Amazon Pay V2-->
-
 <?php }?>
 </ul>
 </div>

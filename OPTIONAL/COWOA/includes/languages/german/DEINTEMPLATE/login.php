@@ -7,7 +7,7 @@
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
  
- * @version $Id: login.php for Amazon Pay V2 2023-03-18 07:05:14Z webchills $
+ * @version $Id: login.php for Amazon Pay V2 and COWOA 2023-03-18 07:05:14Z webchills $
  */
 
 define('NAVBAR_TITLE','Anmelden');
@@ -23,6 +23,8 @@ define('TEXT_NEW_CUSTOMER_POST_INTRODUCTION_SPLIT', 'Ein Kundenkonto bei ' . STO
 
 define('HEADING_RETURNING_CUSTOMER','Stammkunden: Bitte melden Sie sich an');
 define('HEADING_RETURNING_CUSTOMER_SPLIT', 'Stammkunden ');
+define('TEXT_HEADING_COWOA', 'Bestellen ohne Kundenkonto');
+define('TEXT_RATHER_COWOA', 'Möchten Sie ohne Kundenkonto bei uns bestellen? Gerne! Klicken Sie dazu auf den folgenden Button.<br />');
 
 define('TEXT_RETURNING_CUSTOMER_SPLIT', 'Zum Fortfahren, bitte anmelden');
 
@@ -39,4 +41,4 @@ define('TEXT_LOGIN_BANNED', 'FEHLER: Zugriff verweigert.');
 define('HEADING_PAYPAL_CUSTOMER_SPLIT', 'Login und Bezahlen mit PayPal');
 define('TEXT_PAYPAL_CUSTOMER_SPLIT', 'Express Checkout mit PayPal: Bei der Anmeldung mit PayPal über den PayPal Express Button werden Ihre bei PayPal hinterlegten Kontaktdaten für ein Kundenkonto in unserem Onlineshop genutzt. Sie müssen Ihre Daten nicht eintippen und wickeln die Zahlung über PayPal ab.');
 define('HEADING_AMAZON_PAY_V2_CUSTOMER_SPLIT', 'Login und Bezahlen mit Amazon');
-define('TEXT_AMAZON_PAY_V2_CUSTOMER_SPLIT', 'Express Checkout mit Amazon: Bei der Anmeldung mit Amazon über den Amazon Button werden Ihre bei Amazon hinterlegten Kontaktdaten für ein Kundenkonto in unserem Onlineshop genutzt. Sie müssen Ihre Daten nicht eintippen und für die Zahlung werden Ihre bei Amazon hinterlegten Zahlungsarten angeboten.<br/>Bitte beachten Sie dass das Einlösen von Amazon Gutscheinen (Gift Cards) mit dieser Zahlungsart NICHT möglich ist.');
+define('TEXT_AMAZON_PAY_V2_CUSTOMER_SPLIT', 'Express Checkout mit Amazon: Bei der Anmeldung mit Amazon über den Amazon Button werden Ihre bei Amazon hinterlegten Kontaktdaten für ein Kundenkonto in unserem Onlineshop genutzt. Sie müssen Ihre Daten nicht eintippen und für die Zahlung werden Ihre bei Amazon hinterlegten Zahlungsarten angeboten.<br/>Bitte beachten Sie dass das Einlösen von Amazon Gutscheinen (Gift Cards) mit dieser Zahlungsart NICHT möglich sind.');
