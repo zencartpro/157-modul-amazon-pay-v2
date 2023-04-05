@@ -1,53 +1,115 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!--
+ API Documentation HTML Template  - 1.0.1
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+
 <head>
-<title>Amazon Pay V2 für Zen Cart 1.5.7 deutsch</title>
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta http-equiv="content-language" content="de">
-<meta name="description" content="Amazon Pay V2 für Zen Cart 1.5.7 deutsch">
-<link rel="stylesheet" type="text/css" href="includes/css/stylesheet.css">  
-<script type="text/javascript" src="includes/jscript/jscript_tabs.js"></script>
+    <meta charset="utf-8">
+    <title>Amazon Pay V2 für Zen Cart 1.5.7 deutsch - Dokumentation</title>
+    <meta name="description" content="Anleitung zur Integration des Amazon Pay Zahlungsmoduls in die deutsche Zen Cart Version">
+    <meta name="author" content="webchills">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script src="js/highlight.min.js"></script> 
+    <script src="js/jquery.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+$(document).ready(function(){
+    var btn = $('#backToTop');
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+    btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, '300');
+    });
+});
+</script>
 </head>
-<body>
-<div id="wrapper">
-<div id="header">
-<h1>Amazon Pay V2 für Zen Cart 1.5.7 deutsch</h1>
+
+<body class="one-content-column-version">
+<!-- BackToTop Button -->
+<a href="javascript:void(0);" id="backToTop" class="back-to-top">
+    <i class="arrow"></i><i class="arrow"></i>
+</a>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <a href="index.html"><img alt="Anleitung zur Integration des Amazon Pay Zahlungsmoduls in die deutsche Zen Cart Version" title="Anleitung zur Integration des Amazon Pay Zahlungsmoduls in die deutsche Zen Cart Version" src="images/logo.png" height="32" /></a>
+            <span>Amazon Pay V2</span><span2>für Zen Cart 1.5.7 deutsch</span2>
+        </div>
+        <button class="burger-menu-icon" id="button-menu-mobile">
+            <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
+        </button>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Version:</b> 1.0.0</div>
+            <div class="info"><b>Autor:</b> <a href="https://www.webchills.at" target="_blank">webchills</a></div>
+            <div class="info"><b>letztes Update:</b> 04. April 2023</div>
+        </div>
+        <ul>
+            <li class="scroll-to-link active" data-target="content-zweck">
+                <a>Sinn und Zweck</a>
+            </li>
+            <li class="scroll-to-link active" data-target="content-copyright">
+                <a>Copyright</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-vorbereitungen">
+                <a>Vorbereitungen</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-installation">
+                <a>Installation</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-konfiguration">
+                <a>Konfiguration</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-verwendung">
+                <a>Verwendung</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-download">
+                <a>Download</a>
+            </li>
+        </ul>
+    </div>
 </div>
 
-<div id="slidetabsmenu" style="display: none;">
-<ul>
-  <li> <a onClick="expandcontent('sc1', this)" href="javascript:void(0)"><span>Sinn und Zweck</span></a></li>
-    <li> <a onClick="expandcontent('sc6', this)" href="javascript:void(0)"><span>Vorbereitungen</span></a></li>
-  <li> <a onClick="expandcontent('sc2', this)" href="javascript:void(0)"><span>Installation</span></a></li>
-   <li> <a onClick="expandcontent('sc3', this)" href="javascript:void(0)"><span>Konfiguration</span></a></li>
-   <li> <a onClick="expandcontent('sc4', this)" href="javascript:void(0)"><span>Deinstallation</span></a></li>
-  <li> <a onClick="expandcontent('sc5', this)" href="javascript:void(0)"><span>Download</span></a></li>
 
- </ul>
-</div>
-<br style="clear: both;">
+<div class="content-page">
 
-<!--Begin tabcontainer-->
-<div id="tabcontentcontainer">
-
-<!--Begin sc1-->
-<div class="tabcontent" id="sc1" style="display: block;">
-<div class="textcontent">
-<div class="regularlist">
-
-<h2>Sinn und Zweck dieses Moduls</h2>
-
-  <p >Mit diesem Modul wird Zahlung via Amazon Pay im Shop integriert.<br>
+    <div class="content">
+    <p class="headline">Dokumentation zum Zahlungsmodul Amazon Pay V2 für die deutsche Zen Cart Version 1.5.7f</p>
+    <br>
+    <p><img src="images/amazon-pay-icon.svg" width="200px"/></p>
+        <div class="overflow-hidden content-section" id="content-zweck">
+        
+            <h1>Sinn und Zweck</h1>
+            <p >Mit diesem Modul wird Zahlung via Amazon Pay im Shop integriert.<br>
     Kunden können direkt mit ihrem Amazon Konto einloggen und dann die in ihrem Amazon Account hinterlegte Zahlungsart verwenden.<br>
-    Dieses Modul verwendet Amazon Pay Checkout V2 und unterstützt die SCA (Strong Customer Authentication).  <br/>    
+    Dieses Modul verwendet Amazon Pay Checkout V2 und unterstützt die SCA (Strong Customer Authentication).  <br>    
     Es werden keinerlei Daten zu den bestellten Artikeln an Amazon übermittelt, lediglich der Bestellbetrag für die Zahlungsabwicklung</p>
 
 <p><strong>Voraussetzungen:</strong></p>
 <ul>
   <li>
   Freigeschalteter Amazon Seller Account in EU oder UK</li>
-  <li>    Konfiguration der erforderlichen API Keys im Seller Account (siehe Vorbereitungen)</li>
+  <li>    Konfiguration der erforderlichen API Keys im Seller Account (siehe <a href="#content-vorbereitungen">Vorbereitungen</a>)</li>
   <li>    Zen Cart 1.5.7f deutsche Version</li>
   <li>    Shop verwendet durchgehend https
     </li>
@@ -72,32 +134,26 @@
   <li>    Unterstützung von Downloadartikeln
   </li>
 </ul>
-<p dir="auto">&nbsp;</p>
-<h3>Changelog, Copyright,  Lizenz, Credits</h3>
-<p>  <strong>Changelog</strong><br>
-Version 1.0.0<br>
-2023-04-04
-<br>
-- initial release
-<br>
-<br>
+        </div>
+        <div class="overflow-hidden content-section" id="content-copyright">
+            <h1>Copyright, Lizenz, Credits</h1>
+            <p>
 <strong>Copyright</strong> <br>
 (c) 2023 webchills (<a href="https://www.webchills.at" target="_blank">www.webchills.at</a>)<br>
- Portions Copyright (c) 2003 osCommerce<br>
   Portions Copyright     (c) 2003-2023 Zen Cart<br>
   <br>
   <strong>Lizenz:</strong><br>
   This contribution is subject to version 3.0 of the GPL license available through the world-wide-web at the following url:<br>
   <a href="http://www.zen-cart-pro.at/license/3_0.txt">http://www.zen-cart-pro.at/license/3_0.txt</a><br>
   <br>
-  <div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
+  <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
-  </strong></a></div>
- <br/>
+  </strong></a></p>
+ <br>
   <p>
-    <strong>Credits</strong><br>
+    <strong>Credits:</strong>
     <br>
     Dieses Modul basiert auf dem Amazon Pay Modul für modified von AlkimMedia (<a href="https://www.alkim.de" target="_blank">www.alkim.de</a>)<br>
     Grundlage war das entsprechende Github Repository:<br>
@@ -105,24 +161,10 @@ Version 1.0.0<br>
     </p>
     
   </p>
-</div>
-</div>
-</div>
-<!--End sc1-->
-<!--Begin sc6-->
-<div class="tabcontent" id="sc6" style="display: block;">
-<div class="textcontent">
-<div class="regularlist">
-
-<h2>Vorbereitungen bei Amazon</h2>
-<br/><br/>
-<div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
-  Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
-  <br>
-  <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
-  </strong></a></div>
-  <br/><br/>
-<p>Bevor Sie dieses Modul installieren können, nehmen Sie zunächst grundlegende wichtige Einstellungen in Ihrem Amazon Seller Central Account vor. Loggen Sie sich also zunächst in Ihren Account ein auf:<br/>
+        </div>
+        <div class="overflow-hidden content-section" id="content-vorbereitungen">
+            <h2>Vorbereitungen bei Amazon</h2>
+            <p>Bevor Sie dieses Modul installieren können, nehmen Sie zunächst grundlegende wichtige Einstellungen in Ihrem Amazon Seller Central Account vor. Loggen Sie sich also zunächst in Ihren Account ein auf:<br>
   <a href="https://sellercentral-europe.amazon.com/home" target="_blank">https://sellercentral-europe.amazon.com/home</a><br>
   Dort gibt es getrennte Umgebungen für Sandbox und Produktivsystem.<br>
   Wählen Sie zunächst &quot;Amazon Pay Sandbox Ansicht&quot;
@@ -198,7 +240,7 @@ Einmalzahlung  <br>
   <br>
   <img src="images/amazonpayv2-4.jpg" width="703" height="197"  alt=""/><br>
   <br>
-  Da es sich um einen Sandbox Schlüssel handelt beginnt die Public Key ID mit SANDBOX-<br/>
+  Da es sich um einen Sandbox Schlüssel handelt beginnt die Public Key ID mit SANDBOX-<br>
   Kopieren Sie sich die Public-Key-ID wieder in Ihre Textdatei, Sie müssen Sie später in Ihrem Zen Cart Shop hinterlegen.
 <br>
   <br>
@@ -206,8 +248,8 @@ Einmalzahlung  <br>
   gestartet.<br>
   <br>
   Gehen Sie also nun in Ihren Download Ordner, dort sollte sich diese .pem Datei nun befinden.<br>
-  Benennen Sie diese Datei nun um von AmazonPay_SANDBOX-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br><br/>
-  <strong>private-SANDBOX.pem</strong><br><br/>
+  Benennen Sie diese Datei nun um von AmazonPay_SANDBOX-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br><br>
+  <strong>private-SANDBOX.pem</strong><br><br>
   Sie müssen diese Datei später per FTP in Ihren Zen Cart Shop hochladen.<br>
   <br>
   Damit haben Sie nun schon einmal Ihre Sandbox Umgebung fertig vorbereitet.<br>
@@ -243,8 +285,8 @@ Einmalzahlung  <br>
   Gehen Sie wieder in Ihren Download Ordner.
 <br>
   <br>
-  Benennen Sie diese Datei nun um von AmazonPay_LIVE-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br><br/>
-<b>private-LIVE.pem</b> <br><br/>
+  Benennen Sie diese Datei nun um von AmazonPay_LIVE-ABC123ABC123ABC.pem auf exakt folgenden Namen:<br><br>
+<b>private-LIVE.pem</b> <br><br>
 Sie müssen diese Datei später per FTP in Ihren Zen Cart Shop hochladen.<br>
 <br>
 Nun sind Sie in Ihrem Seller Central Account fertig und sollten nun Folgendes zur Hand haben:<br>
@@ -260,28 +302,21 @@ private-SANDBOX.pem<br>
 private-LIVE.pem<br>
 <br>
 Nun können Sie das Modul in Ihrem Shop wie unter Installation beschrieben installieren.</p>
-</div>
-</div>
-</div>
-<!--End sc6-->
-<!--Begin sc2-->
-<div class="tabcontent" id="sc2" style="display: block;">
-<div class="textcontent">
-<div class="regularlist">
-
-<h2>Installation</h2>
-<br/>
-<div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
+            
+        </div>
+        <div class="overflow-hidden content-section" id="content-installation">
+            <h2>Installation</h2>
+           <p><b>Voraussetzungen</b></p>
+  
+  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7f deutsch geeignet</strong>.<br>Der Shop muss durchgehend https verwenden.</p>
+  
+  <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
-  </strong></a></div>
-  <br/>
-<h3>Voraussetzungen</h3>
-  
-  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7f deutsch geeignet</strong>.<br>Der Shop muss durchgehend https verwenden.
-    <br><br/>
-    <strong>WICHTIG:</strong><br>    
+  </strong></a></p>
+    
+    <p><strong>WICHTIG:</strong><br>    
     Für den Einbau dieses Moduls sollten Sie über folgende Werkzeuge verfügen:<br>
   <br>
     1) Ein guter Texteditor. <br>
@@ -295,15 +330,15 @@ Nun können Sie das Modul in Ihrem Shop wie unter Installation beschrieben insta
     Meine Empfehlung: <a href="http://www.scootersoftware.com/" target="_blank">BeyondCompare</a> (kostenlose 30 Tage Testversion verfügbar)<br>
     Ebenfalls gut geeignet ist das kostenlose Programm <a href="http://winmerge.org/" target="_blank">WinMerge </a></p>
   <p><br>
-  <strong>Empfehlung:</strong><br>
+  <strong>Empfehlung:</strong>
   <br>
   Dieses Modul erst in einem Testsystem einbauen und dort   konfigurieren/testen und endgültig an die eigenen Wünsche anpassen.        Erst dann in einem Liveshop einsetzen! Sichern Sie unbedingt alle   Dateien Ihres Shops per FTP und sichern Sie die Datenbank mit phpMyAdmin   oder anderen geeigneten Tools!</p>
-<div id="warning"><b>WICHTIG</b><br>
+<p class="warning"><b>WICHTIG</b><br>
 Vor dem Einbau dieser Änderungen:<br>
 BACKUP von Shop und Datenbank machen! <br>
 Keine Haftung, Verwendung auf eigene Gefahr!<br>
 BACKUP gemacht? Ok, dann weiterlesen...
-</div>
+</p>
 <p>Die Installation erfolgt in folgenden Schritten. Halten Sie diesen Ablauf ein!</p>
 <p><br>
   1) <br>
@@ -332,7 +367,7 @@ Dann nun alle Dateien/Ordner aus dem Ordner NEUE DATEIEN in der vorgegebenen Str
   und<br>
   private-LIVE.pem<br>
   Laden Sie beide in exakt dieses Verzeichnis Ihres Shops hoch:<br>
-  includes/modules/payment/amazon_pay_v2/keys<br/><br/>
+  includes/modules/payment/amazon_pay_v2/keys<br><br>
   Dort befinden sich bereits 2 Dummy Dateien mit demselben Namen, überschreiben Sie sie.
   <br>
   <br>
@@ -350,34 +385,23 @@ Wenn Sie Zen Cart 1.5.7 schon länger im Einsatz haben und schon einmal     Änd
 Vergleichen Sie stattdessen alle Dateien im Ordner GEAENDERTE DATEIEN mit den     entsprechenden Dateien in Ihrem Shop und nehmen Sie die Änderungen     manuell per WinMerge oder BeyondCompare vor.<br>
 Dann spielen Sie die geänderten Dateien in der gezeigten Struktur ein. <br>
 <br>
-<strong>WICHTIG:</strong><br/>
+<strong>WICHTIG:</strong><br>
  Falls Sie das Modul <b>Bestellen ohne Kundenkonto (COWOA)</b> aktiv haben, verwenden Sie die Dateien im Ordner OPTIONAL/COWOA für das Amazon Pay V2 Modul!
  <br>
  Falls Sie das Modul <b>Datenweitergabe für Versandunternehmen</b> aktiv haben, verwenden Sie die Dateien im Ordner OPTIONAL/DATENWEITERGABE AN VERSANDUNTERNEHMEN für das Amazon Pay V2 Modul!<br>
 <br>
 8)<br>
 Nehmen Sie nun unter Konfiguration &gt; Amazon Pay V2 Grundeinstellungen die nötigen Einstellungen vor.</p>
-</div>
-</div>
-</div>
-
-<!--End sc2-->
-
-<!--Begin sc3-->
-<div class="tabcontent" id="sc3" style="display: block;">
-<div class="textcontent">
-<div class="regularlist">
-
-<h2>KONFIGURATION</h2>
-<br/>
-<div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
+        </div>
+<div class="overflow-hidden content-section" id="content-konfiguration">
+            <h1>Konfiguration</h1>
+           <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
-  </strong></a></div>
-  <br/>
-<p><b><br>
-  Einstellungsmöglichkeiten in der Zen Cart Administration</b></p>
+  </strong></a></p>
+  <br>
+<p><b>Einstellungsmöglichkeiten in der Zen Cart Administration</b></p>
 <p> Unter Konfiguration &gt; Amazon Pay V2 Grundeinstellungen sind folgende Optionen verfügbar:<br>
   <strong>Stellen Sie all diese Optionen korrekt ein, bevor Sie das Zahlungsmodul unter Module &gt; Zahlungsarten aktivieren</strong>  <br>
   <strong><br>
@@ -438,6 +462,8 @@ Geben Sie hier Ihre Amazon Pay Public Key ID für den Livebetrieb ein. Sie begin
 Sie müssen zusätzlich wie unter Vorbereitungen bei Amazon beschrieben die entsprechende private-LIVE.pem Datei hochgeladen haben nach:<br>
 includes/modules/payment/amazon_pay_v2/keys<br>
 <br>
+<strong>Amazon Pay - Token für Cronjob</strong><br>
+Sie können später einen Cronjob einrichten, der den aktuellen Status von Amazon Pay Transaktionen automatisch mit Amazon abgleicht und in der Datenbank entsprechend aktualisiert. Das ist vor allem für Rückerstattungen sinnvoll, da deren Status erst nach einiger Zeit auf Refunded wechselt. Um zu verhindern, dass Aufrufe an das Cronjob Script ohne Token erfolgen und damit für DDOS Attacken missbraucht werden können, ist das Script abgesichert und wird nur ausgeführt, wenn dieser Token mitübergeben wird. Genaueres zur Cronjob Konfiguration unter <a href="#content-verwendung">Verwendung</a>.<br><br>
 Alles konfiguriert?<br>
 <br>
 <strong>Dann gehen Sie nun auf Module &gt; Zahlungsarten</strong><br>
@@ -452,88 +478,132 @@ Stellen Sie auf Sandbox, um das Modul zunächst im Sandbox Modus zu testen (Sie 
 <br>
  9)<br>
 Schalten Sie nun den Wartungsmodus wieder aus und testen Sie die Funktionalität.<br>
-Achten Sie darauf, dass Sie aus Ihrem Amazon Seller Central Account ausgeloggt sind, falls Sie die Amazon Pay Funktionalität im selben Browser testen wollen!<br>
+Achten Sie darauf, dass Sie aus Ihrem Amazon Seller Central Account ausgeloggt sind, falls Sie die Amazon Pay Funktionalität im selben Browser testen wollen!</p>
+        </div>
+        
+<div class="overflow-hidden content-section" id="content-verwendung">
+            <h1>Verwendung</h1>
+            <p><b>Bestellablauf im Frontend</b></p>
+<p>Dieses Modul ist so konzipiert, dass Kunden, die via Amazon einloggen auch mit Amazon Pay bezahlen. Solchen Kunden wird als Zahlungsart automatisch nur Amazon Pay angeboten.<br>
+  <br>
+  Legt ein Besucher etwas in den Warenkorb erscheint im Warenkorb und falls aktiviert in der Warenkorb Sidebox der Button Login mit Amazon.<br>
+  Wird der verwendet wird der Besucher zum Amazon Login geleitet und loggt sich dort ein.<br>
+  Hat diese Emailadresse noch kein Kundenkonto im Shop wird automatisch ein Kundenkonto mit den bei Amazon hinterlegten Kundendaten erstellt.<br>
+  Das ist anlog zur PayPal Express Funktionalität und erforderlich, um die Bestellung abwicklen zu können.<br>
+  Dabei wird für das neue Kundenkonto ein zufällig generiertes 8-stelliges Passwort erstellt. Falls aktiviert, bekommt der Kunde ein Willkommensemail mit diesem Passwort, damit er sich später auch normal im Shop einloggen kann, um z.B. den Status der Bestellung zu prüfen.<br>
+  Hat die Emailadresse bereits ein Kundenkonto im Shop, wird sie normal eingeloggt.<br>
+  <br>
+  Der Kunde kommt dann auf die Warenkorbseite.<br>
+  Hier ist der normale Button &quot;zur Kasse&quot; mit dem Amazon Pay Button ersetzt.<br>
+  Ebenso ist der Link &quot;zur Kasse&quot; im Header mit dem Amazon Pay Button ersetzt.<br>
+  Anclicken des Amazon Pay Buttons startet dann den Checkout.<br>
+  Der Kunde kommt auf die Amazon Zahlungsseite und kann hier Lieferadresse und bei Amazon hinterlegte Zahlungsart bei Bedarf ändern.<br>
+Nach dieser Bestätigung kommt er in den Shop zurück auf die neue von diesem Modul mitgelieferte Seite checkout_shipping_amazon<br>
+Die Lieferadresse wurde hier mit der zuvor bei Amazon gewählten Lieferadresse befüllt.<br>
+Hier wählt der Kunde die gewünschte Versandart.<br>
+Danach kommt er auf die neue von diesem Modul mitgelieferte Seite checkout_payment_amazon.<br>
+Hier muss keine Zahlungsart mehr gewählt werden, es ist automatisch Amazon Pay hinterlegt.<br>
+Diese Seite dient dazu, 
+Aktionskupons und Geschenkgutscheinguthaben ganz normal verarbeiten zu können.<br>
+Hier befindet sich auch die nötige Zustimmung zu den AGB.<br>
+Mit Click auf Weiter kommt der Kunde dann auf die neue von diesem Modul
+mitgelieferte Seite checkout_confirmation_amazon.<br>
+Hier erscheint nochmal die Übersicht der Bestellung. <br>
+Die Lieferadresse kann hier nochmals korrigiert werden, beim Anclicken der Buttons dazu öffnet sich wieder die Amazon Seite, wo der Kunde eine andere Lieferadresse aus seinem Adressbuch wählen kann. Oder falls nötig eine andere bei Amazon hinterlegte Zahlungsart.<br>
+Mit Click auf Kaufen erscheint nochmals die Amazon Zahlungsseite wo die Zahlung verarbeitet wird.<br>
+Hier kann dann auch falls zutreffend die vorgesehene Zwei Faktor Authentifizierungsabfrage (z.B. Codeeingabe in der Smartphone App)
+erscheinen.<br>
+Ist die Zahlung erfolgreich kommt der Kunde auf die normale checkout_success Seite und die Bestellung wird generiert.<br>
+Wird die zahlung von Amazon Pay abgelehnt oder vom Kunden z.B. durch Nicht Bestätigung der Zwei faktor Authentifizierung abgebrochen kommt der Kunde auf die Warenkorbseite wo ein entsprechender Hinweis erscheint.<br>Es werden bei nicht erfolgreichen zahlungen keine Bestellungen generiert!
 <br>
-10)<br>
-Unter Kunden &gt; Kunden und Kunden, die nie etwas bestellt haben ist eine neue Spalte &quot;registriert via&quot;, die anzeigt, ob ein Kundenkonto via Amazon Pay oder normal im Shop erstellt wurde.<br>
-Unter Kunden
-&gt; Amazon Pay V2 Transaktionen sind später alle Amazon Pay Transaktionen ersichtlich<br>
-<br>
-<br>
+Die speziellen Amazon Pay Checkoutseiten sind genauso gestaltet und mit denselben Funktionalitäten ausgestattet wie die normalen Checkoutseiten in Zen Cart.<br>
+Damit werden auch Erweiterungen wie z.B. Zustimmung zur Datenweitergabe an Versandunternehmen unterstützt.<br>
 </p>
-</div>
-</div>
-</div>
-<!--End sc3-->
-
-<!--Begin sc4-->
-<div class="tabcontent" id="sc4" style="display: block;">
-<div class="textcontent">
-<div class="regularlist">
-<h2>DEINSTALLATION</h2>
-<div id="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
+<p><b>Funktionen in der Administration</b></p>
+<p><strong>Neue Datenbanktabellen</strong><br>
+  <br>
+  Dieses Modul legt zwei neue Datenbanktabellen an:<br>
+  <br>
+  <i>amazon_pay_v2_transactions</i><br>
+  Hier werden alle Transaktionen gespeichert und ihr Status aktualisiert.<br>
+  Eine typische Amazon Pay Bestellung hat mindestens 3 Transaktionen unterschiedlicher Typen:<br>
+  Typ: CheckoutSession > Completed<br>
+  Typ: ChargPermission > NonChargeable<br>
+  Typ: Charge > Captured (das ist das wirkliche Einziehen des Betrages<br>
+  Sollte die Zahlung später rückerstattet werden:<br>
+  Typ: Refund > RefundInitiated<br>
+  Wechselt einige Zeit später auf Refunded, sobald Amazon den Betrag wirklich refundiert hat.
+  <br><br>
+  <i>amazon_pay_v2_logs</i><br>
+  Hier werden die Übermittlungen an die Amazon API protokolliert<br>
+  Sinnvoll zur Fehlersuche
+  <br><br>
+  <strong>Transaktionsübersicht unter Kunden &gt; Amazon Pay V2 Transaktionen </strong><br>
+  <br>
+  Ähnlich wie für Paypal oder Braintree Kreditkartenzahlungen sind die entsprechenden Amazon Pay V2 Transaktionen ersichtlich.<br>
+  Hier werden die Einträge aus der Tabelle amazon_pay_v2_transactions visualisiert<br>
+  <br>
+  <strong>Kennzeichnung unter Kunden &gt; Kunden</strong><br>
+  <br>
+  In einer neuen Spalte &quot;registriert via&quot; ist ersichtlich, ob es sich um ein via Amazon Pay, PayPal Express oder über die normale Shopregistrierung generiertes Kundenkonto handelt.<br>
+  Diese Spalte ist auch unter Kunden, die nie etwas bestellt haben, verfügbar.<br>
+  Im Sinne der DSGVO sollten Sie regelmäßig solche Kundenkonten, die nie etwas bestellt haben, löschen.
+  <br>
+  <br>
+  <strong>Zahlungen rückerstatten </strong><br>
+  <br>
+  Mit Amazon Pay getätigte Zahlungen können bei Bedarf direkt über die Shopadministration rückerstattet werden.
+</p>
+        </div>
+        
+<div class="overflow-hidden content-section" id="content-download">
+            <h1>Download</h1>
+           <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
   <br>
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
-  </strong></a></div>
-<p><br>
-  Um dieses Modul vollständig zu entfernen, gehen Sie in folgenden Schritten vor:<br>
+  </strong></a></p>
   <br>
-  1.<br>
-  Module &gt; Zahlungsarten<br>
-  amazon_pay_v2 deinstallieren
-  <br>
-  <br>
-  2.<br>
-  Alle von diesem Modul neu angelegten Dateien vom Server löschen.<br>
-  Alle von diesem Modul geänderten Dateien wieder mit den Originalversionen bzw. den Dateien Ihres Backups ersetzen.<br>
-  <br>
-  3.<br>
-Die Datei uninstall.sql im Ordner UNINSTALL mit einem Texteditor öffen und den Inhalt kopieren</p>
-<p>4.<br>
-  Zen Cart Administration öffnen und unter Tools &gt; SQL Patches installieren den Inhalt ins Feld hineinkopieren und absenden. </p>
-</div>
-</div>
-</div>
-<!--End sc4-->
-
-<!--Begin sc5-->
-<div class="tabcontent" id="sc5" style="display: block;">
-<div class="textcontent">
-<div class="regularlist">
-<h2>Download</h2>
 <p>Dieses Modul steht kostenlos auf Github zum Download bereit.</p>
 <p>Freigegebene getestete Versionen für den Einsatz in Livesystemen ausschließlich auf Github unter Releases herunterladen:<br>
   <a href="https://github.com/zencartpro/157-modul-amazon-pay-v2/releases" target="_blank"><b>https://github.com/zencartpro/157-modul-amazon-pay-v2/releases</b></a></p>
-
-
+        </div>
+    </div>
 </div>
-</div>
-</div>
-<!--End sc5-->
 
+<!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
+<a target="_blank" href="https://github.com/zencartpro/157-modul-amazon-pay-v2" class="github-corner" aria-label="View source on Github" title="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+<style>
+    .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
 
-</div>
-<div id="footer">
-Ein Modul von <a href="https://www.zen-cart-pro.at" target="_blank">www.zen-cart-pro.at</a> - Die deutsche Zen Cart Version
-</div>
-</div>
-<!--end tabcontainer-->
-<script type="text/javascript">document.getElementById('sc1').style.display = 'none';</script>
-<script type="text/javascript">document.getElementById('sc6').style.display = 'none';</script>
-<script type="text/javascript">document.getElementById('sc2').style.display = 'none';</script>
-<script type="text/javascript">document.getElementById('sc3').style.display = 'none';</script>
-<script type="text/javascript">document.getElementById('sc4').style.display = 'none';</script>
-<script type="text/javascript">document.getElementById('sc5').style.display = 'none';</script>
+    @keyframes octocat-wave {
+        0%,
+        100% {
+            transform: rotate(0)
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg)
+        }
+        40%,
+        80% {
+            transform: rotate(10deg)
+        }
+    }
 
-<script type="text/javascript">ShowTabs()</script>
-<script type="text/javascript">
-// We only show the tab links if JavaScript is available/active.
-<!--
-if (document.getElementById("slidetabsmenu") != null) {
-  document.getElementById('slidetabsmenu').style.display = "block";
-}
-//-->
-</script>
-
-</body></html>
+    @media (max-width:500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }
+    @media only screen and (max-width:680px){ .github-corner > svg { right: auto!important; left: 0!important; transform: rotate(270deg)!important;}}
+</style>
+<!-- END Github Corner Ribbon - to remove -->
+<script src="js/script.js"></script>
+</body>
+</html>
