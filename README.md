@@ -28,10 +28,12 @@ Freigegebene getestete Versionen für den Einsatz in Livesystemen ausschließlic
 * Zahlungen können bei Bedarf via Shopadministration rückerstattet werden (ähnlich wie bei der PayPal Express Integration)
 * komplette Sandbox Unterstützung, so dass alles im Sandbox Modus getestet werden kann
 * getrennter Checkout für Amazon Pay und normale Zahlungsarten um möglichst wenig in die bestehende Funktionalität einzugreifen
-* Verwendung des aktuellen Amazon Pay API SDK PHP 2.6.1
+* Verwendung des aktuellen Amazon Pay API SDK PHP
 * Übersicht der Amazon Pay Transaktionen filterbar nach Status in der Zen Cart Administration
 * Kennzeichnung in der Kundenübersicht ob ein Kundenkonto normal im Shop oder automatisch via Amazon Pay erstellt wurde
 * Unterstützung von Zen Cart Gutscheinguthaben und Aktionskupons Funktionalität
+* Unterstützung von Downloadartikeln
+* Cronjob zum regelmäßigen Abgleich der Transaktionsstati in der Shopdatenbank mit Amazon möglich
 
 ## Credits:
 * Dieses Modul basiert auf dem Amazon Pay Modul für modified von AlkimMedia (www.alkim.de)
@@ -39,5 +41,5 @@ Freigegebene getestete Versionen für den Einsatz in Livesystemen ausschließlic
 * https://github.com/AlkimMedia/AmazonPay_Modified_2060
 
 ## Installation und Konfiguration
-Anleitung auf:
+Umfangreiche Anleitung und Dokumentation auf:
 * https://amazonpayv2.zen-cart-pro.at
