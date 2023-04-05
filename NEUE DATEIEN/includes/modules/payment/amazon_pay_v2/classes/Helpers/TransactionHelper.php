@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at 
- * @version $Id: TransactionHelper.php 2023-04-01 07:32:16Z webchills $
+ * @version $Id: TransactionHelper.php 2023-04-05 08:32:16Z webchills $
  */
 namespace ZencartAmazonPayV2\Helpers;
 
@@ -221,6 +221,16 @@ class TransactionHelper
         return $return;
     }    
 
+    public function doCron()
+    {
+        foreach ($this->getOpenTransactions() as $transaction) {
+            try {
+                $this->refreshTransaction($transaction);
+            } catch (Exception $e) {
+                GeneralHelper::log('error', 'Unable to update transaction in cron',  ['msg'=>$e->getMessage(), 'trace' => $e->getTrace(), 'transaction' => $transaction->toArray()]);
+            }
+        }
+    }
     public function refreshOrder($orderId)
     {
         foreach ($this->getOpenTransactions($orderId) as $transaction) {

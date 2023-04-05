@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: 1_0_0.php 2023-04-01 21:07:51Z webchills $
+ * @version $Id: 1_0_0.php 2023-04-05 08:48:51Z webchills $
  */
 
 
@@ -29,7 +29,8 @@ $db->Execute("INSERT IGNORE INTO ".TABLE_CONFIGURATION." (configuration_title, c
 ('Amazon Pay - Merchant ID', 'AMAZON_PAY_V2_MERCHANT_ID', '1234567', 'Enter your Amazon Pay Merchant ID.<br>', @gid, 9, NOW(), NULL, NULL),
 ('Amazon Pay - Store ID', 'AMAZON_PAY_V2_STORE_ID', 'amzn1.application-oa2-client.1234567', 'Enter your Amazon Pay Store ID<br>', @gid, 10, NOW(), NULL, NULL),
 ('Amazon Pay - SANDBOX Public Key ID', 'AMAZON_PAY_V2_PUBLIC_KEY_ID_SANDBOX', 'SANDBOX-1234567', 'Enter your Amazon Pay Public Key ID for Live for Sandbox Use<br>', @gid, 11, NOW(), NULL, NULL),
-('Amazon Pay - LIVE Public Key ID', 'AMAZON_PAY_V2_PUBLIC_KEY_ID', 'LIVE-1234567', 'Enter your Amazon Pay Public Key ID for Live Use<br>', @gid, 12, NOW(), NULL, NULL);");
+('Amazon Pay - LIVE Public Key ID', 'AMAZON_PAY_V2_PUBLIC_KEY_ID', 'LIVE-1234567', 'Enter your Amazon Pay Public Key ID for Live Use<br>', @gid, 12, NOW(), NULL, NULL),
+('Amazon Pay - Token for Cronjob', 'AMAZON_PAY_V2_CRON_TOKEN', '".md5(time() . rand(0,99999))."', 'Enter a random sequence of numbers and letters to ensure that only this token can be used to run the cronjob.', @gid, 12, NOW(), NULL, NULL)");
 
 $db->Execute("REPLACE INTO ".TABLE_CONFIGURATION_LANGUAGE." (configuration_title, configuration_key, configuration_description, configuration_language_id) VALUES
 ('Amazon Pay - Layout Checkout Button', 'AMAZON_PAY_V2_LAYOUT_CHECKOUT_BUTTON', 'Wählen Sie ein Layout für den Amazon Pay Checkout Button.<br>', 43),
@@ -41,6 +42,7 @@ $db->Execute("REPLACE INTO ".TABLE_CONFIGURATION_LANGUAGE." (configuration_title
 ('Amazon Pay - Händler ID', 'AMAZON_PAY_V2_MERCHANT_ID', 'Geben Sie Ihre Amazon Pay Händler ID ein.<br>', 43),
 ('Amazon Pay - Store ID', 'AMAZON_PAY_V2_STORE_ID', 'Geben Sie Ihre Amazon Pay Store ID ein.<br>', 43),
 ('Amazon Pay - SANDBOX Public Key ID', 'AMAZON_PAY_V2_PUBLIC_KEY_ID_SANDBOX', 'Geben Sie Ihre Amazon Pay Public Key ID für den Sandboxbetrieb ein.<br>', 43),
+('Amazon Pay - Token für Cronjob', 'AMAZON_PAY_V2_CRON_TOKEN', 'Geben Sie eine zufällige Folge von Ziffern und Buchstaben ein, um sicherzustellen, dass nur mit dieser Token der Cronjob ausgeführt werden kann.<br>', 43),
 ('Amazon Pay - LIVE Public Key ID', 'AMAZON_PAY_V2_PUBLIC_KEY_ID', 'Geben Sie Ihre Amazon Pay Public Key ID für den Livebetrieb ein.<br>', 43)");
 
 // create new transactions table
