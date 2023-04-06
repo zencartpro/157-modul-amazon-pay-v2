@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2.php 2023-04-05 17:32:16Z webchills $
+ * @version $Id: amazon_pay_v2.php 2023-04-06 20:52:16Z webchills $
  */
 
 require_once(DIR_FS_CATALOG . DIR_WS_MODULES . 'payment/amazon_pay_v2/amazon_pay_v2.php');
@@ -202,15 +202,11 @@ class amazon_pay_v2 extends base {
 
             $checkoutHelper->setOrderIdToChargePermission($checkoutSession->getChargePermissionId(), $insert_id);
 
-            if (defined('AMAZON_PAY_V2_ORDER_COMMENT') && AMAZON_PAY_V2_ORDER_COMMENT === 'true') {
-               
-                $db->Execute("UPDATE 
-                                " . TABLE_ORDERS_STATUS_HISTORY . " 
-                              SET 
-                                comments = CONCAT('" . zen_db_input(TEXT_AMAZON_PAY_V2_ORDER_REFERENCE . ": " . $checkoutSession->getChargePermissionId() . "\n\n") . "', comments) 
-                              WHERE 
-                                orders_status_history_id = (SELECT orders_status_history_id FROM " . TABLE_ORDERS_STATUS_HISTORY . " WHERE orders_id = " . (int)$insert_id . " ORDER BY orders_status_history_id LIMIT 1)");
-              
+            if (defined('AMAZON_PAY_V2_ORDER_COMMENT') && AMAZON_PAY_V2_ORDER_COMMENT === 'true') {            	
+            // add a new OSH record for this order's Amazon Pay Reference
+            $commentString = TEXT_AMAZON_PAY_V2_ORDER_REFERENCE  . $checkoutSession->getChargePermissionId();
+            $new_order_status = (int)MODULE_PAYMENT_AMAZON_PAY_V2_ORDER_STATUS_ID;
+            zen_update_orders_history($insert_id, $commentString, null, $new_order_status, 0);
             }
            
         } catch (Exception $e) {

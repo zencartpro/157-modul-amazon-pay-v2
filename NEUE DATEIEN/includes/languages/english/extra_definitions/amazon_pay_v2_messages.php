@@ -10,12 +10,12 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2_messages.php 2023-03-29 18:58:51Z webchills $
+ * @version $Id: amazon_pay_v2_messages.php 2023-04-06 21:03:51Z webchills $
  */
 define('TEXT_AMAZON_PAY_V2_ERROR', 'Your payment was not successful. Please use another payment method.');
 define('TEXT_AMAZON_PAY_V2_ACCOUNT_EDIT_INFORMATION', 'To start the checkout, we still need the following information from you:');
 define('TEXT_AMAZON_PAY_V2_ADDRESS_INFORMATION', 'Please enter your delivery address.');
-define('TEXT_AMAZON_PAY_V2_ORDER_REFERENCE', 'Amazon Pay Reference Number');
+define('TEXT_AMAZON_PAY_V2_ORDER_REFERENCE', 'Amazon Pay Reference Number: ');
 define('TEXT_AMAZON_PAY_V2_USE_CREDIT', 'I would like to redeem my credit.');
 // this text is used to announce the username/password when the module creates the customer account and emails data to them:
 define('EMAIL_EC_AMAZON_ACCOUNT_INFORMATION', 'When you checked out with Amazon Pay, a customer account was automatically created in our shop so that you can log back in and check the status of your order. With the following access data you can log into your customer account:');
