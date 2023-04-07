@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: customers_without_order.php for Amazon Pay V2 and COWOA 2023-04-02 12:14:51Z webchills $
+ * @version $Id: customers_without_order.php for Amazon Pay V2 and COWOA 2023-04-07 20:47:51Z webchills $
  */
 require('includes/application_top.php');
 
@@ -427,7 +427,7 @@ if (zen_not_null($action)) {
                                           a.entry_country_id, c.customers_telephone, c.customers_fax,
                                           c.customers_newsletter, c.customers_default_address_id,
                                           c.customers_email_format, c.customers_group_pricing,
-                                          c.COWOA_account, c.customers_authorization, c.customers_referral, c.customers_secret, o.date_purchased, customers_amazonpay_ec, customers_paypal_ec
+                                          c.COWOA_account, c.customers_authorization, c.customers_referral, c.customers_secret, o.date_purchased, c.customers_amazonpay_ec, c.customers_paypal_ec
                                   FROM " . TABLE_CUSTOMERS . " c LEFT JOIN " . TABLE_ADDRESS_BOOK . " a
                                   on c.customers_default_address_id = a.address_book_id left join " . TABLE_ORDERS . " o
                                   on c.customers_id = o.customers_id
@@ -1241,7 +1241,7 @@ if (zen_not_null($action)) {
 
                   $zco_notifier->notify('NOTIFY_ADMIN_CUSTOMERS_LISTING_NEW_FIELDS', array(), $new_fields, $disp_order);
 
-                  $customers_query_raw = "select c.customers_id, c.customers_lastname, c.customers_firstname, c.customers_email_address, c.customers_group_pricing, c.customers_telephone, c.customers_authorization, c.customers_referral, c.COWOA_account, c.customers_secret, customers_amazonpay_ec, customers_paypal_ec,
+                  $customers_query_raw = "select c.customers_id, c.customers_lastname, c.customers_firstname, c.customers_email_address, c.customers_group_pricing, c.customers_telephone, c.customers_authorization, c.customers_referral, c.COWOA_account, c.customers_secret, c.customers_amazonpay_ec, c.customers_paypal_ec,
                                            a.entry_country_id, a.entry_company, a.entry_company, a.entry_street_address, a.entry_city, a.entry_postcode,
                                            ci.customers_info_date_of_last_logon, ci.customers_info_date_account_created, o.date_purchased
                                            " . $new_fields . ",
