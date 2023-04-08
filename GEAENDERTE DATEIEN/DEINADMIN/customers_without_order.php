@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: customers_without_order.php for Amazon Pay V2 2023-04-07 20:50:51Z webchills $
+ * @version $Id: customers_without_order.php for Amazon Pay V2 2023-04-08 19:37:51Z webchills $
  */
 require('includes/application_top.php');
 
@@ -1095,6 +1095,12 @@ if (zen_not_null($action)) {
             break;
           case 'gv_balance-desc':
             $disp_order = "cgc.amount DESC, c.customers_lastname, c.customers_firstname";
+            break;
+          case 'Amazon-asc':
+            $disp_order = "c.customers_amazonpay_ec, c.customers_paypal_ec";
+            break;
+          case 'Amazon-desc':
+            $disp_order = "c.customers_amazonpay_ec DESC, c.customers_paypal_ec";
             break;
           default:
             $disp_order = "ci.customers_info_date_account_created DESC";
