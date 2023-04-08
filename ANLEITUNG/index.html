@@ -60,7 +60,7 @@ $(document).ready(function(){
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Version:</b> 1.0.0</div>
+            <div class="info"><b>Version:</b> 1.0.1</div>
             <div class="info"><b>Autor:</b> <a href="https://www.webchills.at" target="_blank">webchills</a></div>
             <div class="info"><b>last Update:</b> 08. April 2023</div>
         </div>
@@ -85,6 +85,12 @@ $(document).ready(function(){
             </li>
             <li class="scroll-to-link" data-target="content-download">
                 <a>DOWNLOAD</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-changelog">
+                <a>CHANGELOG</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-update">
+                <a>UPDATE</a>
             </li>
         </ul>
     </div>
@@ -613,12 +619,57 @@ Der Aufruf des Scripts ist mit einem Token abgesichert, die Sie unter Konfigurat
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
   </strong></a></p>
   <br>
-<p>Dieses Modul steht kostenlos auf Github zum Download bereit:</p>
-<p><a class="downloadbutton" title="Download Amazon Pay V2 1.0.0 für Zen Cart 1.5.7 deutsch" href="https://github.com/zencartpro/157-modul-amazon-pay-v2/archive/refs/tags/v1.0.0.zip">Download (.zip)</a></p>
+<p>Dieses Modul steht kostenlos auf Github zum Download bereit.</p>
+<p>Aktuelle Version: 1.0.1 vom 08.04.2023:</p>
+<p><a class="downloadbutton" title="Download Amazon Pay V2 1.0.1 für Zen Cart 1.5.7 deutsch" href="https://github.com/zencartpro/157-modul-amazon-pay-v2/archive/refs/tags/v1.0.1.zip">Download (.zip)</a></p>
 <p>Der Downloadbutton liefert immer direkt von Github das .zip Archiv der neuesten Version.<br>
 Ältere Versionen sind auf Github unter Releases archiviert:<br>
   <a href="https://github.com/zencartpro/157-modul-amazon-pay-v2/releases" target="_blank">https://github.com/zencartpro/157-modul-amazon-pay-v2/releases</a><br><br>
   Wenn Sie von der Github Website downloaden, dann laden Sie bitte ausschließlich Releases herunter (zip unter Assets). In den Repositories findet Entwicklung statt, wenn Sie ein Repository (über den grünen Code Button) herunterladen, dann kann das Fehler enthalten bzw. noch eine reine Entwicklungsversion sein. Daher freigegebene getestete Versionen für den Einsatz in Livesystemen ausschließlich unter Releases herunterladen oder über den Downloadbutton oben. Um unter Windows Einschränkungen bei langen Dateinamen zu vermeiden, entpacken Sie das .zip  mit einem echten unzip Programm wie z.B. <a href="https://www.7-zip.de/" target="_blank">7-zip</a> oder <a href="https://www.winrar.de/" target="_blank">WinRAR</a></p>
+        </div>
+        <div class="overflow-hidden content-section" id="content-changelog">
+            <h1>Changelog</h1>
+           <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
+  Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
+  <br>
+  <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
+  </strong></a></p>
+  <br>
+<p>Version 1.0.1 - 2023-04-08</p>
+<ul>
+<li>Amazon Bestellreferenz wird als eigener Eintrag in der Bestellhistory hinterlegt so wie bei PayPal Express</li>
+<li>Erstattung via Admin auf Zen Cart Standardfunktionalität mit admin_notification umgestellt</li>
+<li>Erstattungsfunktionalität nun multilingual</li>
+<li>Korrektur in Beispieldatei tpl_header.php für responsive classic</li>
+<li>Korrektur in Beispieldatei customers.php und customers_without_order.php für COWOA</li>
+<li>Anleitung aktualisiert</li>
+</ul>
+<p>Version 1.0.0 - 2023-04-05</p>
+<ul><li>Initial Release</li><ul>
+
+        </div>
+        <div class="overflow-hidden content-section" id="content-update">
+            <h1>Update von Version 1.0.0</h1>
+           <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
+  Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
+  <br>
+  <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
+  </strong></a></p>
+  <br>
+<p>Wenn Sie bereits Version 1.0.0 einsetzen und von Version 1.0.0 auf 1.0.1 aktualisieren wollen, dann überschreiben Sie folgende Dateien in Ihrer Shopinstallation mit denen aus dem 1.0.1 Download:</p>
+<ul>
+<li>DEINADMIN/includes/languages/german/extra_definitions/amazon-pay-v2.php</li>
+<li>DEINADMIN/includes/languages/english/extra_definitions/amazon-pay-v2.php</li>
+<li>includes/languages/german/extra_definitions/amazon_pay_v2_messages.php</li>
+<li>includes/languages/english/extra_definitions/amazon_pay_v2_messages.php</li>
+<li>includes/modules/payment/amazon_pay_v2.php</li>
+<li>includes/modules/payment/amazon_pay_v2/amazon_pay_v2_admin_notifications.php</li>
+<li>includes/modules/payment/amazon_pay_v2/includes/amazon_pay_v2_admin_actions.php</li>
+</ul>
+<p>Folgende Datei vom Server löschen:</p>
+<ul><li>includes/modules/payment/amazon_pay_v2/includes/admin_order.inc.php</li></ul>
+<p>Folgende neue Datei hochladen:</p>
+<ul><li>DEINADMIN/includes/installers/amazon-pay-v2/1_0_1.php</li></ul>
         </div>
     </div>
     <div class="footer"><p>Copyright © 2004 - 2023 <a href="https://www.zen-cart-pro.at" target="_blank">www.zen-cart-pro.at - Die deutsche Zen Cart Version</a><br>
