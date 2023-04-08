@@ -62,7 +62,7 @@ $(document).ready(function(){
         <div class="content-infos">
             <div class="info"><b>Version:</b> 1.0.0</div>
             <div class="info"><b>Autor:</b> <a href="https://www.webchills.at" target="_blank">webchills</a></div>
-            <div class="info"><b>last Update:</b> 06. April 2023</div>
+            <div class="info"><b>last Update:</b> 08. April 2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-zweck">
@@ -492,37 +492,54 @@ Achten Sie darauf, dass Sie aus Ihrem Amazon Seller Central Account ausgeloggt s
 <p>Dieses Modul ist so konzipiert, dass Kunden, die via Amazon einloggen auch mit Amazon Pay bezahlen. Solchen Kunden wird als Zahlungsart automatisch nur Amazon Pay angeboten.<br>
   <br>
   Legt ein Besucher etwas in den Warenkorb erscheint im Warenkorb und falls aktiviert in der Warenkorb Sidebox der Button Login mit Amazon.<br>
-  Wird der verwendet wird der Besucher zum Amazon Login geleitet und loggt sich dort ein.<br>
+  Warenkorbseite:<br>
+  <img src="images/amazonpayv2-35.jpg"  alt=""/><br>
+  Warenkorb Sidebox:<br>
+  <img src="images/amazonpayv2-26.jpg"  alt=""/><br>
+  Wird der normale "zur Kasse" Button gewählt, besteht auf der Login Seite ebenfalls die Möglichkeit, sich mit Amazon einzuloggen:<br>
+  <img src="images/amazonpayv2-25.jpg"  alt=""/><br> Wird der Amazon Login Button verwendet, wird der Besucher zum Amazon Login geleitet und loggt sich dort ein.<br>
+  <img src="images/amazonpayv2-16.jpg"  alt=""/><br>
   Hat diese Emailadresse noch kein Kundenkonto im Shop wird automatisch ein Kundenkonto mit den bei Amazon hinterlegten Kundendaten erstellt.<br>
   Das ist anlog zur PayPal Express Funktionalität und erforderlich, um die Bestellung abwickeln zu können.<br>
   Dabei wird für das neue Kundenkonto ein zufällig generiertes 8-stelliges Passwort erstellt. Falls aktiviert, bekommt der Kunde ein Willkommensemail mit diesem Passwort, damit er sich später auch normal im Shop einloggen kann, um z.B. den Status der Bestellung zu prüfen.<br>
   Hat die Emailadresse bereits ein Kundenkonto im Shop, wird sie normal eingeloggt.<br>
   <br>
   Der Kunde kommt dann auf die Warenkorbseite.<br>
+  <img src="images/amazonpayv2-17.jpg"  alt=""/><br>
   Hier ist der normale Button &quot;zur Kasse&quot; mit dem Amazon Pay Button ersetzt.<br>
   Ebenso ist der Link &quot;zur Kasse&quot; im Header mit dem Amazon Pay Button ersetzt.<br>
+  <img src="images/amazonpayv2-29.jpg"  alt=""/><br>
+  Ebenso in der Warenkorb Sidebox:<br>
+  <img src="images/amazonpayv2-28.jpg"  alt=""/><br>
   Anclicken des Amazon Pay Buttons startet dann den Checkout.<br><br>
   Der Kunde kommt auf die Amazon Zahlungsseite und kann hier Lieferadresse und bei Amazon hinterlegte Zahlungsart bei Bedarf ändern.<br>
-Nach dieser Bestätigung kommt er in den Shop zurück auf die neue von diesem Modul mitgelieferte Seite checkout_shipping_amazon<br>
-Die Lieferadresse wurde hier mit der zuvor bei Amazon gewählten Lieferadresse befüllt.<br>
+  <img src="images/amazonpayv2-18.jpg"  alt=""/><br>
+  Nach dieser Bestätigung kommt er in den Shop zurück auf die neue von diesem Modul mitgelieferte Seite checkout_shipping_amazon<br>
+  <img src="images/amazonpayv2-19.jpg"  alt=""/><br>
+  Die Lieferadresse wurde hier mit der zuvor bei Amazon gewählten Lieferadresse befüllt.<br>
 Hier wählt der Kunde die gewünschte Versandart.<br><br>
 Danach kommt er auf die neue von diesem Modul mitgelieferte Seite checkout_payment_amazon.<br>
+<img src="images/amazonpayv2-20.jpg"  alt=""/><br>
 Hier muss keine Zahlungsart mehr gewählt werden, es ist automatisch Amazon Pay hinterlegt.<br>
 Diese Seite dient dazu, Aktionskupons und Geschenkgutscheinguthaben ganz normal verarbeiten zu können.<br>
 Hier befindet sich auch die nötige Zustimmung zu den AGB.<br><br>
 Mit Click auf Weiter kommt der Kunde dann auf die neue von diesem Modul mitgelieferte Seite checkout_confirmation_amazon.<br>
-Hier erscheint nochmal die Übersicht der Bestellung. <br>
+<img src="images/amazonpayv2-21.jpg"  alt=""/><br> Hier erscheint nochmal die Übersicht der Bestellung. <br>
 Die Lieferadresse kann hier nochmals korrigiert werden, beim Anclicken der Buttons dazu öffnet sich wieder die Amazon Seite, wo der Kunde eine andere Lieferadresse aus seinem Adressbuch wählen kann. Oder falls nötig eine andere bei Amazon hinterlegte Zahlungsart.<br>
+<img src="images/amazonpayv2-30.jpg"  alt=""/><br>
+<img src="images/amazonpayv2-31.jpg"  alt=""/><br>
 Mit Click auf Kaufen erscheint nochmals die Amazon Zahlungsseite wo die Zahlung verarbeitet wird.<br>
-Hier kann dann auch falls zutreffend die vorgesehene Zwei Faktor Authentifizierungsabfrage (z.B. Codeeingabe in der Smartphone App)
+<img src="images/amazonpayv2-22.jpg"  alt=""/><br> Hier kann dann auch falls zutreffend die vorgesehene Zwei Faktor Authentifizierungsabfrage (z.B. Codeeingabe in der Smartphone App)
 erscheinen.<br><br>
 Ist die Zahlung erfolgreich kommt der Kunde auf die normale checkout_success Seite und die Bestellung wird generiert.<br>
-Wird die Zahlung von Amazon Pay abgelehnt oder vom Kunden z.B. durch Nicht Bestätigung der Zwei Faktor Authentifizierung abgebrochen, kommt der Kunde auf die Warenkorbseite wo ein entsprechender Hinweis erscheint.<br><br>Es werden bei nicht erfolgreichen Zahlungen keine Bestellungen generiert!
+<img src="images/amazonpayv2-23.jpg"  alt=""/><br> Wird die Zahlung von Amazon Pay abgelehnt oder vom Kunden z.B. durch Nicht Bestätigung der Zwei Faktor Authentifizierung abgebrochen, kommt der Kunde auf die Warenkorbseite wo ein entsprechender Hinweis erscheint.<br><br>Es werden bei nicht erfolgreichen Zahlungen keine Bestellungen generiert!
 <br>
 Die speziellen Amazon Pay Checkoutseiten sind genauso gestaltet und mit denselben Funktionalitäten ausgestattet wie die normalen Checkoutseiten in Zen Cart.<br>
 Damit werden auch Erweiterungen wie z.B. Zustimmung zur Datenweitergabe an Versandunternehmen unterstützt.<br><br>
 Der Bestellablauf für nicht mit Amazon eingeloggte Kunden ist völlig unverändert, hier wird Amazon Pay als Zahlungsart nicht angeboten und die Kunden durchlaufen den ganz normalen Zen Cart Checkout.
-</p>
+<br><br>
+Nach erfolgreicher Bestellung bekommt der Kunde von Amazon eine Bestätigung per Email, die auch die Shop Bestellnummer und die jeweilige Amazon Pay Referenz enthält:<br/>
+<img src="images/amazonpayv2-24.jpg"  alt=""/> </p>
 <br>
 <p><b>FUNKTIONEN IN DER ADMINISTRATION</b></p>
 <p><strong>Neue Datenbanktabellen</strong><br>
