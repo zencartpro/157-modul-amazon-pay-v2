@@ -15,7 +15,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_header.php for Amazon Pay V2 2023-04-04 09:40:58Z webchills $
+ * @version $Id: tpl_header.php for Amazon Pay V2 2023-04-08 10:40:58Z webchills $
  */
 ?>
 
@@ -150,7 +150,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     	 <li class="last"><span class="amazon-pay-button" style="max-width:140px; margin-left:5px; vertical-align:top;"></span></li>
     	 <?php } ?>
     	 <?php } else { ?>
-    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-check-square" title="Checkout"></i></a></li>
+     <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
      <?php } ?>
      <!--eof Amazon Pay V2-->
     
@@ -207,7 +207,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     	 <li class="last"><span class="amazon-pay-button" style="max-width:170px; margin-left:5px;"></span></li>
     	 <?php } ?>
     	 <?php } else { ?>
-    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-check-square" title="Checkout"></i></a></li>
+    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
      <?php } ?>
      <!--eof Amazon Pay V2-->
 <?php }?>
