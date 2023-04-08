@@ -10,16 +10,19 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon-pay-v2.php 2023-04-01 21:03:51Z webchills $
+ * @version $Id: amazon-pay-v2.php 2023-04-08 11:52:51Z webchills $
  */
 define('BOX_CONFIGURATION_AMAZON_PAY_V2', 'Amazon Pay V2 Grundeinstellungen');
 define('BOX_CUSTOMERS_AMAZON_PAY_V2', 'Amazon Pay V2 Transaktionen');
 define('TABLE_HEADING_AMAZON', 'registriert via');
+define('AMAZON_ADMIN_REFRESH_SUCCESS', 'Transaktionsstati erfolgreich aktualisiert');
 define('AMAZON_ADMIN_REFUND_SUCCESS', 'Rückerstattung erfolgreich übermittelt');
 define('AMAZON_ADMIN_REFUND_ERROR', 'Rückerstattung nicht möglich!');
 define('AMAZON_ADMIN_REFUND_ORDER_COMMENT', 'Rückerstattung Amazon Pay Referenznummer: ');
 define('AMAZON_ADMIN_HEADER_TYPE', 'Typ');
 define('AMAZON_ADMIN_HEADER_REFERENCE', 'Referenz');
-define('AMAZON_ADMIN_HEADER_REFERENCE', 'Betrag');
+define('AMAZON_ADMIN_HEADER_AMOUNT', 'Betrag');
 define('AMAZON_ADMIN_HEADER_REFUNDED', 'Erstattet');
 define('AMAZON_ADMIN_HEADER_ACTIONS', 'Aktionen');
+define('AMAZON_ADMIN_REFUND_BUTTON', 'Zahlung erstatten');
+define('AMAZON_ADMIN_REFRESH_LINK', 'Aktualisieren');

@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2_admin_actions.php 2023-04-02 09:50:16Z webchills $
+ * @version $Id: amazon_pay_v2_admin_actions.php 2023-04-08 11:41:16Z webchills $
  */
 require_once __DIR__ . '/../amazon_pay_v2.php';
 
@@ -25,8 +25,7 @@ if (!empty($_GET['amazon_pay_action'])) {
     try {
         switch ($_GET['amazon_pay_action']) {
             case 'get_admin_html':
-                define('AMAZON_PAY_IS_AJAX', true);
-                include __DIR__.'/admin_order.inc.php';
+                define('AMAZON_PAY_IS_AJAX', true);                
                 die;
             
             case 'refund':
@@ -57,20 +56,22 @@ if (!empty($_GET['amazon_pay_action'])) {
                     $infoText = AMAZON_ADMIN_REFUND_ORDER_COMMENT;
                     $comments =  $infoText .  $transaction->reference;
                     zen_update_orders_history($orderId, $comments, null, $new_order_status, 0);
-                    $messageStack->add_session(AMAZON_ADMIN_REFUND_SUCCESS, 'success');    
+                    $messageStack->add_session(AMAZON_ADMIN_REFUND_SUCCESS, 'success');   
+                    zen_redirect(zen_href_link(FILENAME_ORDERS, zen_get_all_get_params(['amazon_pay_action']), 'SSL')); 
                 }
                 break;
            
             case 'refresh':
                 $transactionHelper->refreshOrder($_GET['oID']);
+                $messageStack->add_session(AMAZON_ADMIN_REFRESH_SUCCESS, 'success');   
+                zen_redirect(zen_href_link(FILENAME_ORDERS, zen_get_all_get_params(['amazon_pay_action']), 'SSL')); 
                 break;
         }
     }catch(Exception $e){
         $_SESSION['amazon_pay_admin_error'] = $e->getMessage();
         $messageStack->add_session(AMAZON_ADMIN_REFUND_ERROR, 'error');
         zen_redirect(zen_href_link(FILENAME_ORDERS, zen_get_all_get_params(['amazon_pay_action']), 'SSL'));
-    }
-   
+    }   
     
     zen_redirect(zen_href_link(FILENAME_ORDERS, zen_get_all_get_params(['amazon_pay_action']), 'SSL'));
 }
