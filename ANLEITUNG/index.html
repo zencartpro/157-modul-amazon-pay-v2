@@ -173,12 +173,13 @@ $(document).ready(function(){
         </div>
         <div class="overflow-hidden content-section" id="content-vorbereitungen">
             <h2>Vorbereitungen bei Amazon</h2>
-            <p>Bevor Sie dieses Modul installieren können, nehmen Sie zunächst grundlegende wichtige Einstellungen in Ihrem Amazon Seller Central Account vor. Loggen Sie sich also zunächst in Ihren Account ein auf:<br>
+            <p>Bevor Sie dieses Modul installieren können, nehmen Sie zunächst grundlegende wichtige Einstellungen in Ihrem Amazon Seller Central Account vor.<br>
+            Loggen Sie sich also zunächst in Ihren Account ein auf:<br>
   <a href="https://sellercentral-europe.amazon.com/home" target="_blank">https://sellercentral-europe.amazon.com/home</a><br>
   Dort gibt es getrennte Umgebungen für Sandbox und Produktivsystem.<br>
   Wählen Sie zunächst &quot;Amazon Pay Sandbox Ansicht&quot;
 </p>
-<p>Führen Sie die folgende Schritte vollständig durch:<br>
+<p>Führen Sie die folgenden Schritte vollständig durch:<br>
   <br>
   <strong>I SANDBOX </strong></p>
 <p><strong>1) Client-ID-/Store-ID-Konfigurationen anlegen/verwalten</strong><br>
@@ -191,22 +192,24 @@ $(document).ready(function(){
   (In diesen Beispielen wird als Shopadresse https://www.meinshop.de verwendet, ersetzen Sie das mit Ihrer echten Adresse
   <br>
   <br>
-  Name der App oder des Shops:<br>
+  <strong>Name der App oder des Shops:</strong><br>
   Geben Sie den Namen Ihres Shops ein<br>
   <br>
-  Logo hochladen:<br>
+  <strong>Logo hochladen:</strong><br>
   Laden Sie ein Logo hoch, das dann später in den Amazon Popups angezeigt wird<br>
   <br>
-  URL der Datenschutzrichtlinie:<br>
+  <strong>URL der Datenschutzrichtlinie:</strong><br>
   Die Datenschutzseite Ihres Zen Cart Shops hat in der Regel folgende
   Adresse:<br>
-  https://www.meinshop.de/index.php?main_page=privacy
+  https://www.meinshop.de/<strong>index.php?main_page=privacy</strong><br>
   <br>
-  <br>
-  Zulässige Javascript Ursprünge:<br>
+  <strong>Zulässige Javascript Ursprünge:</strong><br>
   Tragen Sie hier die URL ein, auf der Ihr Shop läuft, z.B.<br>
-  https://www.meinshop.de
-  <br>
+  https://www.meinshop.de<br/>
+  Geben Sie lediglich die Haupt URL an. Falls Ihr Shop in einem Unterverzeichnis läuft, z.B. https://www.meinshop.de/shop, dann geben Sie trotzdem an:<br>
+  https://www.meinshop.de<br/>
+  Läuft Ihr Shop auf einer Subdomain, z.B. https://shop.meinewebsite.de, dann geben Sie die Subdomain an:<br>
+  https://shop.meinewebsite.de
   <br>
   Die restlichen Felder lassen Sie leer.<br>
   <br>
@@ -221,10 +224,10 @@ $(document).ready(function(){
 <p><strong>2) API Anmeldedaten für Sandbox erstellen in Integration Central</strong><br>
   <br>
   Gehen Sie nun (weiterhin in der Sandbox Ansicht) auf Integration Central.</p>
-<p>Wählen Sie bei E-Commerce Anbieter oder Integrationstyp:<br>
+<p>Wählen Sie bei <strong>E-Commerce Anbieter oder Integrationstyp</strong>:<br>
 Selbst entwickelt<br>
 <br>
-Wählen Sie bei Zahlungstyp:<br>
+Wählen Sie bei <strong>Zahlungstyp</strong>:<br>
 Einmalzahlung  <br>
   <br>
   <img src="images/amazonpayv2-1.jpg" width="696" height="308"  alt=""/><br>
@@ -274,7 +277,7 @@ Einmalzahlung  <br>
   <img src="images/amazonpayv2-5.jpg" width="505" height="73"  alt=""/><br>
   <br>
   <img src="images/amazonpayv2-6.jpg" width="513" height="195"  alt=""/></p>
-<p>Dort gehen Sie auf den Link Integration Central:<br>
+<p>Dort gehen Sie <strong>unten auf den Link Integration Central</strong>:<br>
   <br>
   <img src="images/amazonpayv2-7.jpg" width="488" height="618"  alt=""/><br>
   Dort erstellen Sie nun genau wie vorher Ihre API Keys für den Livebetrieb:<br>
@@ -520,16 +523,23 @@ Achten Sie darauf, dass Sie aus Ihrem Amazon Seller Central Account ausgeloggt s
   Anclicken des Amazon Pay Buttons startet dann den Checkout.<br><br>
   Der Kunde kommt auf die Amazon Zahlungsseite und kann hier Lieferadresse und bei Amazon hinterlegte Zahlungsart bei Bedarf ändern.<br>
   <img src="images/amazonpayv2-18.jpg"  alt=""/><br>
-  Nach dieser Bestätigung kommt er in den Shop zurück auf die neue von diesem Modul mitgelieferte Seite checkout_shipping_amazon<br>
+  Das Modul übergibt die Länder, an die vom Shop nicht geliefert wird (Länder & Steuern > Länder > Status = rot), daher ist es nicht möglich, dass Kunden eine Lieferadresse auswählen, an die Sie nicht liefern.<br/>Bei der Auswahl der Lieferadresse aus dem Amazon Adressbuch erscheint bereits ein entsprechender Hinweis:<br/>
+  <img src="images/amazonpayv2-36.jpg"  alt=""/> <br>
+  Wird sie trotzdem gewählt, wird das von Amazon verhindert:<br>
+  <img src="images/amazonpayv2-37.jpg"  alt=""/><br>
+  Hinweis:<br>
+  Werden Downloadartikel bestellt, wird bei Amazon erst gar keine Lieferadressenauswahl angeboten.
+  <br/><br>
+   Nach Auswahl der Lieferadresse mit "zur Kasse gehen" kommt der Kunde in den Shop zurück auf die neue von diesem Modul mitgelieferte Seite <strong>checkout_shipping_amazon</strong><br>
   <img src="images/amazonpayv2-19.jpg"  alt=""/><br>
   Die Lieferadresse wurde hier mit der zuvor bei Amazon gewählten Lieferadresse befüllt.<br>
 Hier wählt der Kunde die gewünschte Versandart.<br><br>
-Danach kommt er auf die neue von diesem Modul mitgelieferte Seite checkout_payment_amazon.<br>
+Danach kommt er auf die neue von diesem Modul mitgelieferte Seite <strong>checkout_payment_amazon</strong>.<br>
 <img src="images/amazonpayv2-20.jpg"  alt=""/><br>
 Hier muss keine Zahlungsart mehr gewählt werden, es ist automatisch Amazon Pay hinterlegt.<br>
 Diese Seite dient dazu, Aktionskupons und Geschenkgutscheinguthaben ganz normal verarbeiten zu können.<br>
 Hier befindet sich auch die nötige Zustimmung zu den AGB.<br><br>
-Mit Click auf Weiter kommt der Kunde dann auf die neue von diesem Modul mitgelieferte Seite checkout_confirmation_amazon.<br>
+Mit Click auf Weiter kommt der Kunde dann auf die neue von diesem Modul mitgelieferte Seite <strong>checkout_confirmation_amazon</strong>.<br>
 <img src="images/amazonpayv2-21.jpg"  alt=""/><br> Hier erscheint nochmal die Übersicht der Bestellung. <br>
 Die Lieferadresse kann hier nochmals korrigiert werden, beim Anclicken der Buttons dazu öffnet sich wieder die Amazon Seite, wo der Kunde eine andere Lieferadresse aus seinem Adressbuch wählen kann. Oder falls nötig eine andere bei Amazon hinterlegte Zahlungsart.<br>
 <img src="images/amazonpayv2-30.jpg"  alt=""/><br>
