@@ -62,7 +62,7 @@ $(document).ready(function(){
         <div class="content-infos">
             <div class="info"><b>Version:</b> 1.0.1</div>
             <div class="info"><b>Autor:</b> <a href="https://www.webchills.at" target="_blank">webchills</a></div>
-            <div class="info"><b>last Update:</b> 08. April 2023</div>
+            <div class="info"><b>last Update:</b> 05. Mai 2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-zweck">
@@ -523,7 +523,9 @@ Achten Sie darauf, dass Sie aus Ihrem Amazon Seller Central Account ausgeloggt s
   Anclicken des Amazon Pay Buttons startet dann den Checkout.<br><br>
   Der Kunde kommt auf die Amazon Zahlungsseite und kann hier Lieferadresse und bei Amazon hinterlegte Zahlungsart bei Bedarf ändern.<br>
   <img src="images/amazonpayv2-18.jpg"  alt=""/><br>
-  Das Modul übergibt die Länder, an die vom Shop nicht geliefert wird (Länder & Steuern > Länder > Status = rot), daher ist es nicht möglich, dass Kunden eine Lieferadresse auswählen, an die Sie nicht liefern.<br/>Bei der Auswahl der Lieferadresse aus dem Amazon Adressbuch erscheint bereits ein entsprechender Hinweis:<br/>
+  Das Modul übergibt die Länder, an die vom Shop nicht geliefert wird (Länder & Steuern > Länder > Status = rot), daher ist es nicht möglich, dass Kunden eine Lieferadresse auswählen, an die Sie nicht liefern.<br>
+  Stellen Sie daher sicher, dass Sie unter 
+  Länder & Steuern > Länder nur Länder aktiv (grün) haben, in die Sie wirklich liefern!<br/>Bei der Auswahl der Lieferadresse aus dem Amazon Adressbuch erscheint bereits ein entsprechender Hinweis:<br/>
   <img src="images/amazonpayv2-36.jpg"  alt=""/> <br>
   Wird sie trotzdem gewählt, wird das von Amazon verhindert:<br>
   <img src="images/amazonpayv2-37.jpg"  alt=""/><br>
@@ -618,7 +620,16 @@ https://www.meinshop.de/ext/modules/payment/amazon_pay_v2/cron.php<br><br>
 Der Aufruf des Scripts ist mit einem Token abgesichert, die Sie unter Konfiguration > Amazon Pay V2 Grundeinstellungen > Amazon Pay - Token für Cronjob finden.<br>Der Token wurde bei der Installation des Moduls automatisch generiert, Sie können ihn hier natürlich auch auf einen anderen Wert ändern.<br> Wichtig ist nur, dass Sie die URL des Scripts für den Cronjob mit ?token=1234567 erweitern. Ersetzen Sie 1234567 mit dem Token, der Ihnen unter Konfiguration > Amazon Pay V2 Grundeinstellungen angezeigt wird.<br><br>
   Um den Status der Transaktionen in der Datenbank regelmäßig automatisch mit Amazon abzugleichen, richten Sie also einen Cronjob ein, der z.B. einmal täglich folgende Adresse aufruft:<br>
   <b>https://www.meinshop.de/ext/modules/payment/amazon_pay_v2/cron.php?token=1234567</b>
-   </p>
+   <br>
+   <br><br>
+   <b>Wichtiger Hinweis für User des Moduls Ultimate SEO URLs:</b>
+   <br>
+   Sollten Sie dieses Modul verwenden und unter Konfiguration > Ultimate SEO URLs folgende Einstellung haben:<br>
+   <b>Automatische Redirects</b><br>
+Dann stellen Sie Automatische Redirects <b>unbedingt auf false</b><br>
+Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout Button ohne Ergebnis bleibt und daher kein Checkout möglich ist!
+
+</p>
         </div>
         
 <div class="overflow-hidden content-section" id="content-download">
