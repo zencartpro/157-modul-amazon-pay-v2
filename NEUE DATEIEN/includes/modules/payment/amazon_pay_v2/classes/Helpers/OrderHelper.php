@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: OrderHelper.php 2023-04-02 09:35:16Z webchills $
+ * @version $Id: OrderHelper.php 2023-09-09 18:27:16Z webchills $
  */
 namespace ZencartAmazonPayV2;
 
@@ -72,7 +72,7 @@ class OrderHelper
         ];
         zen_db_perform(TABLE_ORDERS_STATUS_HISTORY, $data);
         $q = "UPDATE " . TABLE_ORDERS . " SET orders_status = " . $status . " WHERE orders_id = " . $orderId;
-        zen_db_query($q);
+        $db->Execute($q);
     }
 
     public function setOrderStatusDeclined($orderId)
