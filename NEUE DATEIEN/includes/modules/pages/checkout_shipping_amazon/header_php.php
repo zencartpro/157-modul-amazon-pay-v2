@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen Cart German Specific (zencartpro adaptations)
+ * Zen Cart German Specific (158 code in 157 / zencartpro adaptations)
  * Checkout Shipping Page
  *
  * @copyright Copyright 2003-2023 Zen Cart Development Team
@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: header_php.php 2023-03-28 15:40:16Z webchills $
+ * @version $Id: header_php.php 2023-11-15 20:40:16Z webchills $
  */
 // This should be first line of the script:
 $zco_notifier->notify('NOTIFY_HEADER_START_CHECKOUT_SHIPPING_AMAZON');
@@ -161,17 +161,7 @@ $_SESSION['mobilevisitor'] = false;
     zen_redirect(zen_href_link(FILENAME_TIME_OUT));
   }
 
-//// if the customer is not logged on, redirect them to the login page
-//  if (!zen_is_logged_in()) {
-//    $_SESSION['navigation']->set_snapshot();
-//    zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
-//  } else {
-//    // validate customer
-//    if (zen_get_customer_validate_session($_SESSION['customer_id']) == false) {
-//      $_SESSION['navigation']->set_snapshot(array('mode' => 'SSL', 'page' => FILENAME_CHECKOUT_SHIPPING_AMAZON));
-//      zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
-//    }
-//  }
+$customer = new Customer($_SESSION['customer_id']);
 
 // Validate Cart for checkout
   $_SESSION['valid_to_checkout'] = true;

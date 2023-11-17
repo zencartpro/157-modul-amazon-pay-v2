@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: tpl_checkout_shipping_amazon_default.php 2023-03-31 15:49:16Z webchills $
+ * @version $Id: tpl_checkout_shipping_amazon_default.php 2023-11-15 19:49:16Z webchills $
  */
 
 ?>
@@ -38,7 +38,7 @@
   if (zen_count_shipping_modules() > 0) {
 ?>
  
-<h2 id="checkoutShippingHeadingMethod"><?php echo TABLE_HEADING_SHIPPING_METHOD; ?></h2>
+<h2 id="checkoutShippingHeadingMethod"><?php echo HEADING_SHIPPING_METHOD; ?></h2>
  
 <?php
     if (sizeof($quotes) > 1 && sizeof($quotes[0]) > 1) {
@@ -129,8 +129,8 @@
   }
 ?>
 <fieldset class="shipping" id="comments">
-<legend><?php echo TABLE_HEADING_COMMENTS; ?></legend>
-<?php echo zen_draw_textarea_field('comments', '45', '3', (isset($comments) ? $comments : ''), 'aria-label="' . TABLE_HEADING_COMMENTS . '"'); ?>
+<legend><?php echo HEADING_ORDER_COMMENTS; ?></legend>
+<?php echo zen_draw_textarea_field('comments', '45', '3', (isset($comments) ? $comments : ''), 'aria-label="' . HEADING_ORDER_COMMENTS . '"'); ?>
 </fieldset>
 
 

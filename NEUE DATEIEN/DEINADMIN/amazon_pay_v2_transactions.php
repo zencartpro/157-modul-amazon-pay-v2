@@ -8,9 +8,9 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
  * Dieses Modul ist DONATIONWARE
- * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
+ * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie fÃ¼r die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2_transactions.php 2023-04-02 14:26:16Z webchills $
+ * @version $Id: amazon_pay_v2_transactions.php 2023-11-17 16:26:16Z webchills $
  */
 
   require('includes/application_top.php');
@@ -136,40 +136,28 @@ margin:-50px 5px 0px 10px;
                               
               </tr>
 <?php
-  if (zen_not_null($selected_status)) {
+  if (!empty($selected_status)) {
     $amazon_search = "AND a.status  = :selectedStatus: ";
     $amazon_search = $db->bindVars($amazon_search, ':selectedStatus:', $selected_status, 'string');
     switch ($selected_status) {
-      case 'Captured':     
-      
-     
-        case 'Refunded':     
-      
-        
-        
-       case 'RefundInitiated':     
-      
-       
-        
-        case 'Completed':     
-      
-        
-        
-        case 'NonChargeable':
-     
+      case 'Captured':
+      case 'Refunded': 
+      case 'RefundInitiated':  
+      case 'Completed': 
+      case 'NonChargeable':     
         default:
-        $amazon_query_raw = "SELECT * from `".TABLE_AMAZON_PAY_V2_TRANSACTIONS."` as a, " .TABLE_ORDERS . " as o  where o.orders_id = a.order_id " . $amazon_search . $order_by;
+        $amazon_query_raw = "SELECT a.id, a.order_id, a.reference, a.mode, a.type, a.time, a.charge_amount, a.captured_amount, a.refunded_amount, a.status from `".TABLE_AMAZON_PAY_V2_TRANSACTIONS."` a, " .TABLE_ORDERS . " o  where o.orders_id = a.order_id " . $amazon_search . $order_by;
         break;
    } 
   } else {
-        $amazon_query_raw = "SELECT * from `".TABLE_AMAZON_PAY_V2_TRANSACTIONS."` as a left join " .TABLE_ORDERS . " as o on o.orders_id = a.order_id " . $order_by;
+ $amazon_query_raw = "SELECT a.id, a.order_id, a.reference, a.mode, a.type, a.time, a.charge_amount, a.captured_amount, a.refunded_amount, a.status from ".TABLE_AMAZON_PAY_V2_TRANSACTIONS." a LEFT JOIN " .TABLE_ORDERS . " o on o.orders_id = a.order_id " . $order_by;
 
   }
 
   $amazon_split = new splitPageResults($_GET['page'], MAX_DISPLAY_SEARCH_RESULTS_AMAZON_IPN, $amazon_query_raw, $amazon_query_numrows);
   $amazon_response = $db->Execute($amazon_query_raw);
   foreach ($amazon_response as $amazon_tran) {
-    if ((!isset($_GET['amazonId']) || (isset($_GET['amazonId']) && ($_GET['amazonId'] == $amazon_response->fields['id']))) && !isset($amazonInfo) ) {
+    if ((!isset($_GET['amazonId']) || (isset($_GET['amazonId']) && ($_GET['amazonId'] == $amazon_tran['id']))) && !isset($amazonInfo) ) {
       $amazonInfo = new objectInfo($amazon_tran); 
     }   
     

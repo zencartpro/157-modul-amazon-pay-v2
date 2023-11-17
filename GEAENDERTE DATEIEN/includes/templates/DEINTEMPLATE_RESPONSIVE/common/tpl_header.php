@@ -15,7 +15,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_header.php for Amazon Pay V2 2023-04-08 10:40:58Z webchills $
+ * @version $Id: tpl_header.php for Amazon Pay V2 2023-11-15 19:40:58Z webchills $
  */
 ?>
 
@@ -57,12 +57,12 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 
 <div id="navMain">
   <ul>
-    <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><i class="fa-solid fa-home" title="Home"></i></a></li>
-    <li><a href="#top"><i class="fa-solid fa-arrow-circle-up" title="Back to Top"></i></a></li>
+    <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><i class="fa-solid fa-house" title="Home"></i></a></li>
+    <li><a href="#top"><i class="fa-solid fa-circle-arrow-up" title="Back to Top"></i></a></li>
 <?php
     if (zen_is_logged_in() && !zen_in_guest_checkout()) {
 ?>
-    <li><a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><i class="fa-solid fa-sign-out" title="Log Off"></i></a></li>
+    <li><a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><i class="fa-solid fa-arrow-right-from-bracket" title="Log Off"></i></a></li>
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
     <li><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><i class="fa-solid fa-user" title="My Account"></i></a></li>
 <?php } else { ?>
@@ -73,9 +73,9 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
         if (STORE_STATUS == '0') {
 ?>
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
-    <li><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><i class="fa-solid fa-sign-in" title="Log In"></i></a></li>
+    <li><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><i class="fa-solid fa-arrow-right-to-bracket" title="Log In"></i></a></li>
 <?php } else { ?>
-    <li class="last"><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><i class="fa-solid fa-sign-in" title="Log In"></i></a></li>
+    <li class="last"><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><i class="fa-solid fa-arrow-right-to-bracket" title="Log In"></i></a></li>
 <?php } ?>
 <?php
   }
@@ -84,7 +84,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
 	
-    <li><a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa-solid fa-shopping-cart" title="Shopping Cart"></i></a></li>
+    <li><a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa-solid fa-cart-shopping" title="Shopping Cart"></i></a></li>
     
     <!--bof Amazon Pay V2-->
   <?php if (isset($_SESSION['amazonpaylogin']) && $_SESSION['amazonpaylogin'] == true) {?>
@@ -92,7 +92,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     	 <li class="last"><span class="amazon-pay-button" style="max-width:140px; margin-left:5px; vertical-align:top;"></span></li>
     	 <?php } ?>
     	 <?php } else { ?>
-    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-check-square" title="Checkout"></i></a></li>
+    <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa-solid fa-square-check" title="Checkout"></i></a></li>
      <?php } ?>
      <!--eof Amazon Pay V2-->
     
@@ -111,7 +111,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 
 <div id="navMain">
     <ul>
-<li class="hide"><a href="#top"><i class="fa-solid fa-arrow-circle-up" title="Back to Top"></i></a></li>
+<li class="hide"><a href="#top"><i class="fa-solid fa-circle-arrow-up" title="Back to Top"></i></a></li>
     <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><?php echo HEADER_TITLE_CATALOG; ?></a></li>
 <?php
         if (zen_is_logged_in() && !zen_in_guest_checkout()) {
@@ -136,7 +136,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 <?php } } ?>
 
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
-    <li><a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa-solid fa-shopping-cart" title="Shopping Cart"></i> 
+    <li><a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa-solid fa-cart-shopping" title="Shopping Cart"></i>
      <?php 
      echo $_SESSION['cart']->count_contents().' '. HEADER_TITLE_CART_CONTENTS_PRODUCTS . ''. $currencies->format($_SESSION['cart']->show_total());
         // Wenn Sie statt Artikelanzahl und Warenkorbwert einfach nur das Wort Warenkorb anzeigen lassen wollen, kommentieren Sie die obere Zeile aus und entkommentieren die folgende.
@@ -192,7 +192,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
     <li>
-      <a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa-solid fa-shopping-cart" title="Shopping Cart"></i>
+      <a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa-solid fa-cart-shopping" title="Shopping Cart"></i>
      <?php 
        echo $_SESSION['cart']->count_contents().' '. HEADER_TITLE_CART_CONTENTS_PRODUCTS . ''. $currencies->format($_SESSION['cart']->show_total());
         // Wenn Sie statt Artikelanzahl und Warenkorbwert einfach nur das Wort Warenkorb anzeigen lassen wollen, kommentieren Sie die obere Zeile aus und entkommentieren die folgende.

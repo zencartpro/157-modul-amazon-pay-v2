@@ -1,8 +1,7 @@
 <?php
 /**
  * checkout_payment header_php.php
- *
- * @package page
+ * Zen Cart German Specific (158 code in 157)
  * @copyright Copyright 2003-2023 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
@@ -10,7 +9,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: header_php.php 2023-03-25 20:00:16Z webchills $
+ * @version $Id: header_php.php 2023-11-15 20:00:16Z webchills $
  */
 
 // This should be first line of the script:
@@ -51,13 +50,14 @@ if ($_SESSION['cart']->count_contents() <= 0) {
   if (!zen_is_logged_in()) {
     $_SESSION['navigation']->set_snapshot();
     zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
-  } else {
+  }
+
+$customer = new Customer($_SESSION['customer_id']);
     // validate customer
-    if (zen_get_customer_validate_session($_SESSION['customer_id']) == false) {
+if (zen_get_customer_validate_session($_SESSION['customer_id']) === false) {
       $_SESSION['navigation']->set_snapshot();
       zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
     }
-  }
 
 // if no shipping method has been selected, redirect the customer to the shipping method selection page
 if (!isset($_SESSION['shipping']) || !$_SESSION['shipping']) {
@@ -146,5 +146,6 @@ if (isset($_GET['payment_error']) && is_object(${$_GET['payment_error']}) && ($e
 $breadcrumb->add(NAVBAR_TITLE_1, zen_href_link(FILENAME_CHECKOUT_SHIPPING_AMAZON, '', 'SSL'));
 $breadcrumb->add(NAVBAR_TITLE_2);
 
+$gv_balance = $customer->getData('gv_balance');
 // This should be last line of the script:
 $zco_notifier->notify('NOTIFY_HEADER_END_CHECKOUT_PAYMENT_AMAZON');

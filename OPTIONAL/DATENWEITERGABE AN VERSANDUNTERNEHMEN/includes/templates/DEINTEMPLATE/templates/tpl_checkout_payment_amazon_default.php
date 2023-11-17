@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: tpl_checkout_payment_amazon_default.php for Datenweitergabe an Transportunternehmen 2023-04-02 19:15:16Z webchills $
+ * @version $Id: tpl_checkout_payment_amazon_default.php for Datenweitergabe an Transportunternehmen 2023-11-17 15:15:16Z webchills $
  */
 
 ?>
@@ -73,8 +73,8 @@
 
 
 <fieldset>
-<legend><?php echo TABLE_HEADING_COMMENTS; ?></legend>
-<?php echo zen_draw_textarea_field('comments', '45', '3', (isset($comments) ? $comments : ''), 'aria-label="' . TABLE_HEADING_COMMENTS . '"'); ?>
+<legend><?php echo HEADING_ORDER_COMMENTS; ?></legend>
+<?php echo zen_draw_textarea_field('comments', '45', '3', (isset($comments) ? $comments : ''), 'aria-label="' . HEADING_ORDER_COMMENTS . '"'); ?>
 </fieldset>
 
 

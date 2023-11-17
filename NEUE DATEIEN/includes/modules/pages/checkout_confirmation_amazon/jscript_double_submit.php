@@ -10,10 +10,10 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: jscript_double_submit.php 2019-07-20 webchills $
+ * @version $Id: jscript_double_submit.php 2023-11-15 webchills $
  */
 ?>
-<script type="text/javascript">
+<script>
 function submitonce()
 {
   var button = document.getElementById("btn_submit");

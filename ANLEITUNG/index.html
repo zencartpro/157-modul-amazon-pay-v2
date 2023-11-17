@@ -60,9 +60,9 @@ $(document).ready(function(){
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Version:</b> 1.0.1</div>
+            <div class="info"><b>Version:</b> 1.1.0</div>
             <div class="info"><b>Autor:</b> <a href="https://www.webchills.at" target="_blank">webchills</a></div>
-            <div class="info"><b>last Update:</b> 05. Mai 2023</div>
+            <div class="info"><b>last Update:</b> 17. November 2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-zweck">
@@ -89,9 +89,7 @@ $(document).ready(function(){
             <li class="scroll-to-link" data-target="content-changelog">
                 <a>CHANGELOG</a>
             </li>
-            <li class="scroll-to-link" data-target="content-update">
-                <a>UPDATE</a>
-            </li>
+           
         </ul>
     </div>
 </div>
@@ -117,12 +115,12 @@ $(document).ready(function(){
 <p><strong>Voraussetzungen:</strong></p>
 <ul>
   <li>
-  Freigeschalteter Amazon Seller Account in EU oder UK</li>
+  Freigeschalteter Amazon Pay Account in EU oder UK</li>
   <li>    Konfiguration der erforderlichen API Keys im Seller Account (siehe <a href="#content-vorbereitungen">Vorbereitungen</a>)</li>
-  <li>    Zen Cart 1.5.7f deutsche Version</li>
+  <li>    Zen Cart 1.5.7g deutsche Version</li>
   <li>    Shop verwendet durchgehend https
     </li>
-  <li>    PHP mindestens 7.4.x, empfohlen 8.0.x
+  <li>    PHP mindestens 7.4.x, empfohlen 8.1.x
   </li>
 </ul>
 <p><strong>Features:</strong></p>
@@ -173,6 +171,13 @@ $(document).ready(function(){
         </div>
         <div class="overflow-hidden content-section" id="content-vorbereitungen">
             <h2>Vorbereitungen bei Amazon</h2>
+            <p><b>WICHTIG:</b><br>
+Falls Sie bereits ein bestehendes Amazon Konto haben, dann beachten Sie, dass Sie für Amazon Pay ein eigenes separates Amazon Pay Konto mit einer eigenen Emailadresse benötigen!<br>
+Registrieren Sie sich mit einer eigenen von Ihrem Amazon Konto unabhängigen Emailadresse für Amazon Pay hier:<br>
+<a href="https://pay.amazon.de/signup" target="_blank">https://pay.amazon.de/signup</a><br>
+Bei Shopsystem wählen Sie "Anderes Shop System" aus.
+<br><br>
+Nach erfolgreicher Registrierung können Sie dann die erforderlichen Einstellungen für Amazon Pay wie im Folgenden beschrieben vornehmen.</p>
             <p>Bevor Sie dieses Modul installieren können, nehmen Sie zunächst grundlegende wichtige Einstellungen in Ihrem Amazon Seller Central Account vor.<br>
             Loggen Sie sich also zunächst in Ihren Account ein auf:<br>
   <a href="https://sellercentral-europe.amazon.com/home" target="_blank">https://sellercentral-europe.amazon.com/home</a><br>
@@ -320,7 +325,7 @@ Nun können Sie das Modul in Ihrem Shop wie unter Installation beschrieben insta
             <h2>Installation</h2>
            <p><b>Voraussetzungen</b></p>
   
-  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7f deutsch geeignet</strong>.<br>Der Shop muss durchgehend https verwenden.</p>
+  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7g deutsch geeignet</strong>.<br>Der Shop muss durchgehend https verwenden.</p>
   
   <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
   Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
@@ -641,8 +646,8 @@ Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout B
   </strong></a></p>
   <br>
 <p>Dieses Modul steht kostenlos auf Github zum Download bereit.</p>
-<p>Aktuelle Version: 1.0.1 vom 08.04.2023:</p>
-<p><a class="downloadbutton" title="Download Amazon Pay V2 1.0.1 für Zen Cart 1.5.7 deutsch" href="https://github.com/zencartpro/157-modul-amazon-pay-v2/archive/refs/tags/v1.0.1.zip">Download (.zip)</a></p>
+<p>Aktuelle Version: 1.1.0 vom 17.11.2023:</p>
+<p><a class="downloadbutton" title="Download Amazon Pay V2 1.1.0 für Zen Cart 1.5.7g deutsch" href="https://github.com/zencartpro/157-modul-amazon-pay-v2/archive/refs/tags/v1.1.0.zip">Download (.zip)</a></p>
 <p>Der Downloadbutton liefert immer direkt von Github das .zip Archiv der neuesten Version.<br>
 Ältere Versionen sind auf Github unter Releases archiviert:<br>
   <a href="https://github.com/zencartpro/157-modul-amazon-pay-v2/releases" target="_blank">https://github.com/zencartpro/157-modul-amazon-pay-v2/releases</a><br><br>
@@ -656,6 +661,12 @@ Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout B
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
   </strong></a></p>
   <br>
+  <p>Version 1.1.0 - 2023-11-17<br>Bitte beachten Sie, dass Version 1.1.0 nur für Zen Cart 1.5.7g deutsch geeignet ist!</p>
+<ul>
+<li>Anpassungen für 1.5.7g</li>
+<li>Die Telefonnummer im Kundenaccount (bei Login mit Amazon mit 000000 vorbefüllt) wird nun nach der Bestellung mit der bei Amazon angegebenen Telefonnumer aktualisiert</li>
+<li>Anleitung aktualisiert</li>
+</ul>
 <p>Version 1.0.1 - 2023-04-08</p>
 <ul>
 <li>Amazon Bestellreferenz wird als eigener Eintrag in der Bestellhistory hinterlegt so wie bei PayPal Express</li>
@@ -669,29 +680,7 @@ Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout B
 <ul><li>Initial Release</li><ul>
 
         </div>
-        <div class="overflow-hidden content-section" id="content-update">
-            <h1>Update von Version 1.0.0</h1>
-           <p class="warning"><strong>Dieses Modul ist DONATIONWARE</strong><br>
-  Wenn Sie es in Ihrem Zen Cart Shop verwenden, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version hier:
-  <br>
-  <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
-  </strong></a></p>
-  <br>
-<p>Wenn Sie bereits Version 1.0.0 einsetzen und von Version 1.0.0 auf 1.0.1 aktualisieren wollen, dann überschreiben Sie folgende Dateien in Ihrer Shopinstallation mit denen aus dem 1.0.1 Download:</p>
-<ul>
-<li>DEINADMIN/includes/languages/german/extra_definitions/amazon-pay-v2.php</li>
-<li>DEINADMIN/includes/languages/english/extra_definitions/amazon-pay-v2.php</li>
-<li>includes/languages/german/extra_definitions/amazon_pay_v2_messages.php</li>
-<li>includes/languages/english/extra_definitions/amazon_pay_v2_messages.php</li>
-<li>includes/modules/payment/amazon_pay_v2.php</li>
-<li>includes/modules/payment/amazon_pay_v2/amazon_pay_v2_admin_notifications.php</li>
-<li>includes/modules/payment/amazon_pay_v2/includes/amazon_pay_v2_admin_actions.php</li>
-</ul>
-<p>Folgende Datei vom Server löschen:</p>
-<ul><li>includes/modules/payment/amazon_pay_v2/includes/admin_order.inc.php</li></ul>
-<p>Folgende neue Datei hochladen:</p>
-<ul><li>DEINADMIN/includes/installers/amazon-pay-v2/1_0_1.php</li></ul>
-        </div>
+        
     </div>
     <div class="footer"><p>Copyright © 2004 - 2023 <a href="https://www.zen-cart-pro.at" target="_blank">www.zen-cart-pro.at - Die deutsche Zen Cart Version</a><br>
 the art of e-commerce - übersetzt, angepasst und erweitert zur Verwendung im deutschsprachigen Raum</p></div>

@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: header_php.php for Datenweitergabe an Versandunternehmen 2023-03-29 19:01:16Z webchills $
+ * @version $Id: header_php.php for Datenweitergabe an Versandunternehmen 2023-11-17 15:01:16Z webchills $
  */
 
 
@@ -61,13 +61,15 @@ if ($_SESSION['cart']->count_contents() <= 0) {
   if (!zen_is_logged_in()) {
     $_SESSION['navigation']->set_snapshot(array('mode' => 'SSL', 'page' => FILENAME_CHECKOUT_PAYMENT_AMAZON));
     zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
-  } else {
+  }
+
+$customer = new Customer($_SESSION['customer_id']);
     // validate customer
     if (zen_get_customer_validate_session($_SESSION['customer_id']) == false) {
       $_SESSION['navigation']->set_snapshot();
       zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
     }
-  }
+
 // Ensure no cart content changes during the checkout procedure by checking the internal cartID
 if (isset($_SESSION['cart']->cartID) && isset($_SESSION['cartID'])) {
   if ($_SESSION['cart']->cartID != $_SESSION['cartID']) {

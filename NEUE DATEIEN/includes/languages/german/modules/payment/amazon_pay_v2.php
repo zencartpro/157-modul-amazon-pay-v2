@@ -8,9 +8,9 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
  * Dieses Modul ist DONATIONWARE
- * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie f?r die Weiterentwicklung der deutschen Zen Cart Version auf
+ * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2.php 2023-03-18 08:03:51Z webchills $
+ * @version $Id: amazon_pay_v2.php 2023-11-15 19:52:51Z webchills $
  */
  
 define('MODULE_PAYMENT_AMAZON_PAY_V2_TEXT_ADMIN_TITLE', 'Amazon Pay');
@@ -21,3 +21,4 @@ define('MODULE_PAYMENT_AMAZON_PAY_V2_TEXT_TITLE', 'Amazon Pay');
 define('MODULE_PAYMENT_AMAZON_PAY_V2_TEXT_DESCRIPTION', 'Amazon Pay');
 define('AMAZON_PAY_V2_MESSAGE_SANDBOX_ACTIVE', ' (Sandbox Modus)');
 define('AMAZON_PAY_V2_MESSAGE_ALREADY_INSTALLED', 'Amazon Pay V2 Modul ist bereits installiert.');
+define('TEXT_PAYMENT_MESSAGE_AMAZON_PAY_V2', 'Zahlungsart: Amazon Pay<br>Wir haben Ihre Zahlung dankend erhalten und bearbeiten Ihre Bestellung umgehend.');

@@ -9,10 +9,10 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: jscript_main.php 2022-04-09 10:49:16Z webchills $
+ * @version $Id: jscript_main.php 2023-11-15 20:49:16Z webchills $
  */
 ?>
-<script type="text/javascript">
+<script>
 var selected;
 var submitter = null;
 

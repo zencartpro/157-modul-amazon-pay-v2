@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: checkout_paymemt_amazon.php for Datenweitergabe 2023-04-02 18:36:16Z webchills $
+ * @version $Id: checkout_paymemt_amazon.php for Datenweitergabe 2023-11-17 16:36:16Z webchills $
  */
 
 define('NAVBAR_TITLE_1', 'Bestellung - Schritt 2');
@@ -25,7 +25,7 @@ define('TEXT_NO_PAYMENT_OPTIONS_AVAILABLE','<span class="alert">Entschuldigung, 
 define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Weiter zu Schritt 3</strong>');
 define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- um Ihre Bestellung fortzuführen ...');
 
-define('TABLE_HEADING_CONDITIONS', '<span class="termsconditions">Allgemeine GeschÃ¤ftsbedingungen</span>');
+define('TABLE_HEADING_CONDITIONS', '<span class="termsconditions">Allgemeine Geschäftsbedingungen</span>');
 define('TEXT_CONDITIONS_DESCRIPTION', '<span class="termsdescription">Bitte bestätigen Sie unsere Allgemeinen Geschäftsbedingungen durch Anklicken der Checkbox. Unsere AGB können Sie <a href="' . zen_href_link(FILENAME_CONDITIONS, '', 'SSL') . '" rel="noopener" target="_blank"><span class="pseudolink">hier</span></a> nachlesen.</span>');
 define('TEXT_CONDITIONS_CONFIRM', '<span class="termsiagree">Ich habe die AGB gelesen und akzeptiert. Den Hinweis zu meinem <a href="' . zen_href_link(FILENAME_WIDERRUFSRECHT, '', 'SSL') . '" rel="noopener" target="_blank"><span class="pseudolink">Widerrufsrecht</span></a> habe ich verstanden.</span>');
 

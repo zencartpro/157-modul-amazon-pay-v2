@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2.php 2023-04-06 20:52:16Z webchills $
+ * @version $Id: amazon_pay_v2.php 2023-11-15 19:52:16Z webchills $
  */
 
 require_once(DIR_FS_CATALOG . DIR_WS_MODULES . 'payment/amazon_pay_v2/amazon_pay_v2.php');
@@ -185,8 +185,13 @@ class amazon_pay_v2 extends base {
                 } elseif ($chargePermission->getBillingAddress() && $chargePermission->getBillingAddress()->getPhoneNumber()) {
                     $phone = $chargePermission->getBillingAddress()->getPhoneNumber();
                 }
+                // add phone number to order
                 if ($phone) {
                     zen_db_perform(TABLE_ORDERS, ['customers_telephone' => $phone], 'update', 'orders_id = ' . (int)$insert_id);
+                }
+                // update customers phone number (replace default 000000)
+                if ($phone) {
+                   zen_db_perform(TABLE_CUSTOMERS, ['customers_telephone' => $phone], 'update', 'customers_id = ' . (int)$_SESSION['customer_id']);
                 }
             }
 
@@ -214,6 +219,7 @@ class amazon_pay_v2 extends base {
             GeneralHelper::log('error', 'unexpected exception during checkout', [$e->getMessage(), $checkoutSession->toArray()]);
             $checkoutHelper->defaultErrorHandling();
         }
+        $_SESSION['payment_method_messages'] = TEXT_PAYMENT_MESSAGE_AMAZON_PAY_V2 ;
     }
     function getOrderTotal($orderId)
     {

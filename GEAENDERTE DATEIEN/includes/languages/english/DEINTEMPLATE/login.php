@@ -1,13 +1,12 @@
 <?php
 /**
- * Zen Cart German Specific
- * @package languageDefines
+ * Zen Cart German Specific (158 code in 157)
+ 
  * @copyright Copyright 2003-2023 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- 
- * @version $Id: login.php for Amazon Pay V2 2023-03-18 07:05:14Z webchills $
+ * @version $Id: login.php for Amazon Pay V2 2023-11-15 19:05:14Z webchills $
  */
 
 define('NAVBAR_TITLE', 'Login');
@@ -26,7 +25,7 @@ define('HEADING_RETURNING_CUSTOMER_SPLIT', 'Returning Customers');
 
 define('TEXT_RETURNING_CUSTOMER_SPLIT', 'In order to continue, please login to your <strong>' . STORE_NAME . '</strong> account.');
 
-define('TEXT_PASSWORD_FORGOTTEN', 'Forgot your password?');
+
 
 define('TEXT_LOGIN_ERROR', 'Error: Sorry, there is no match for that email address and/or password.');
 define('TEXT_VISITORS_CART', '<strong>Note:</strong> If you have shopped with us before and left something in your cart, for your convenience, the contents will be merged if you log back in. <a href="javascript:session_win();">[More Info]</a>');

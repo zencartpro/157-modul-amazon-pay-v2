@@ -9,10 +9,10 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: jscript_pmt_support.php 2022-01-28 22:59:16Z webchills $
+ * @version $Id: jscript_pmt_support.php 2023-11-15 20:59:16Z webchills $
  */
 ?>
-<script type="text/javascript">
+<script>
 
 function concatExpiresFields(fields) {
     return $(":input[name=" + fields[0] + "]").val() + $(":input[name=" + fields[1] + "]").val();

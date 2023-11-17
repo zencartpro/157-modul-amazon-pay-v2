@@ -1,13 +1,12 @@
 <?php
 /**
- * Zen Cart German Specific
- * @package languageDefines
+ * Zen Cart German Specific (158 code in 157)
+ 
  * @copyright Copyright 2003-2023 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- 
- * @version $Id: login.php for Amazon Pay V2 2023-03-18 07:05:14Z webchills $
+ * @version $Id: login.php for Amazon Pay V2 2023-11-15 19:05:14Z webchills $
  */
 
 define('NAVBAR_TITLE','Anmelden');
@@ -26,7 +25,7 @@ define('HEADING_RETURNING_CUSTOMER_SPLIT', 'Stammkunden ');
 
 define('TEXT_RETURNING_CUSTOMER_SPLIT', 'Zum Fortfahren, bitte anmelden');
 
-define('TEXT_PASSWORD_FORGOTTEN','Passwort vergessen?');
+
 
 define('TEXT_LOGIN_ERROR','Achtung! E-Mail Adresse oder Passwort wurden nicht gefunden.');
 define('TEXT_VISITORS_CART','<strong class="note">Hinweis:</strong> Der Inhalt Ihres aktuellen Besucher Warenkorbs wird nach Ihrer Anmeldung bzw. Registrierung in Ihren Kunden Warenkorb übernommen. <a href="javascript:session_win();">[Hilfe]</a>');
