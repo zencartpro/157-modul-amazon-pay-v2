@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: 1_0_0.php 2023-04-05 08:48:51Z webchills $
+ * @version $Id: 1_0_0.php 2023-11-19 12:48:51Z webchills $
  */
 
 
@@ -25,7 +25,7 @@ $db->Execute("INSERT IGNORE INTO ".TABLE_CONFIGURATION." (configuration_title, c
 ('Amazon Pay - Region', 'AMAZON_PAY_V2_REGION', 'EU', 'Choose the region where your store is located between EU (default) and UK.<br>', @gid, 3, NOW(), NULL, 'zen_cfg_select_option(array(\'EU\', \'UK\'),'),
 ('Amazon Pay - IPN URL', 'AMAZON_PAY_V2_IPN_URL', 'https://www.meinshop.de/ext/modules/payment/amazon_pay_v2/ipn.php', 'Enter the URL of your store for Amazon IPN notifications.<br>', @gid, 6, NOW(), NULL, NULL),
 ('Amazon Pay - Reference Number', 'AMAZON_PAY_V2_ORDER_COMMENT', 'true', 'Set to true to enable the display of the Amazon Pay reference number in the order status comment history<br>', @gid, 7, NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),'),
-('Amazon Pay - Send Customer Account Welcome Email', 'AMAZON_PAY_V2_SEND_WELCOME_EMAIL', 'true', 'If a visitor who is logging in with Amazon Pay is not an existing customer, a customer account is automatically created for him/her in the store so that the order can be processed. Would you like to inform the customer about this and send them a welcome email with their login details? The customer will then automatically receive a welcome email with a randomly generated password.<br>', @gid, 8, NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),'),
+('Amazon Pay - Send Customer Account Welcome Email', 'AMAZON_PAY_V2_SEND_WELCOME_EMAIL', 'false', 'If a visitor who is logging in with Amazon Pay is not an existing customer, a customer account is automatically created for him/her in the store so that the order can be processed. Would you like to inform the customer about this and send them a welcome email with their login details? The customer will then automatically receive a welcome email with a randomly generated password.<br>', @gid, 8, NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),'),
 ('Amazon Pay - Merchant ID', 'AMAZON_PAY_V2_MERCHANT_ID', '1234567', 'Enter your Amazon Pay Merchant ID.<br>', @gid, 9, NOW(), NULL, NULL),
 ('Amazon Pay - Store ID', 'AMAZON_PAY_V2_STORE_ID', 'amzn1.application-oa2-client.1234567', 'Enter your Amazon Pay Store ID<br>', @gid, 10, NOW(), NULL, NULL),
 ('Amazon Pay - SANDBOX Public Key ID', 'AMAZON_PAY_V2_PUBLIC_KEY_ID_SANDBOX', 'SANDBOX-1234567', 'Enter your Amazon Pay Public Key ID for Live for Sandbox Use<br>', @gid, 11, NOW(), NULL, NULL),

@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2_login.php 2023-04-01 12:59:16Z webchills $
+ * @version $Id: amazon_pay_v2_login.php 2023-11-19 14:33:16Z webchills $
  */
 
 include 'includes/application_top.php';
@@ -54,6 +54,7 @@ if (!$check_customer->EOF) {
     $sql_data_array = [
         'customers_authorization' => '0',
         'customers_gender' => 'd',
+        'customers_email_format' => 'HTML',
         'customers_firstname' => $firstName,
         'customers_lastname' => $lastName,
         'customers_dob' => '0001-01-01 00:00:00',

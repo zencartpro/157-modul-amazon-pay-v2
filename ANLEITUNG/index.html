@@ -62,7 +62,7 @@ $(document).ready(function(){
         <div class="content-infos">
             <div class="info"><b>Version:</b> 1.1.0</div>
             <div class="info"><b>Autor:</b> <a href="https://www.webchills.at" target="_blank">webchills</a></div>
-            <div class="info"><b>last Update:</b> 17. November 2023</div>
+            <div class="info"><b>last Update:</b> 19. November 2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-zweck">
@@ -633,6 +633,17 @@ Der Aufruf des Scripts ist mit einem Token abgesichert, die Sie unter Konfigurat
    <b>Automatische Redirects</b><br>
 Dann stellen Sie Automatische Redirects <b>unbedingt auf false</b><br>
 Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout Button ohne Ergebnis bleibt und daher kein Checkout möglich ist!
+<br><br>
+   <b>Wichtiger Hinweis für das Email Format:</b>
+   <br>
+  Seit Version 1.1.0 ist für neu via Amazon angelegte Kundenkonten das Email Format HTML vordefiniert, da die meisten Shops HTML Mails versenden.<br>
+  Sollten Sie in Ihrem Shop keine HTML Emails sondern Text Emails versenden, ändern Sie in der Datei:<br>
+  amazon_pay_v2_login.php<br>
+  ca. Zeile 57<br>
+  von:
+  'customers_email_format' => 'HTML',<br>
+  auf:<br>
+  'customers_email_format' => 'TEXT',
 
 </p>
         </div>
@@ -646,7 +657,7 @@ Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout B
   </strong></a></p>
   <br>
 <p>Dieses Modul steht kostenlos auf Github zum Download bereit.</p>
-<p>Aktuelle Version: 1.1.0 vom 17.11.2023:</p>
+<p>Aktuelle Version: 1.1.0 vom 19.11.2023:</p>
 <p><a class="downloadbutton" title="Download Amazon Pay V2 1.1.0 für Zen Cart 1.5.7g deutsch" href="https://github.com/zencartpro/157-modul-amazon-pay-v2/archive/refs/tags/v1.1.0.zip">Download (.zip)</a></p>
 <p>Der Downloadbutton liefert immer direkt von Github das .zip Archiv der neuesten Version.<br>
 Ältere Versionen sind auf Github unter Releases archiviert:<br>
@@ -661,9 +672,10 @@ Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout B
   <a href="https://spenden.zen-cart-pro.at" target="_blank"><strong>https://spenden.zen-cart-pro.at
   </strong></a></p>
   <br>
-  <p>Version 1.1.0 - 2023-11-17<br>Bitte beachten Sie, dass Version 1.1.0 nur für Zen Cart 1.5.7g deutsch geeignet ist!</p>
+  <p>Version 1.1.0 - 2023-11-19<br>Bitte beachten Sie, dass Version 1.1.0 nur für Zen Cart 1.5.7g deutsch geeignet ist!</p>
 <ul>
-<li>Anpassungen für 1.5.7g</li>
+<li>Anpassungen für 1.5.7g und PHP 8.1.x</li>
+<li>Email Format für neu via Amazon angelegte Kundenkonten auf HTML voreingestellt</li>
 <li>Die Telefonnummer im Kundenaccount (bei Login mit Amazon mit 000000 vorbefüllt) wird nun nach der Bestellung mit der bei Amazon angegebenen Telefonnumer aktualisiert</li>
 <li>Anleitung aktualisiert</li>
 </ul>
@@ -680,7 +692,7 @@ Die Einstellung true kann dazu führen, dass ein Click auf den Amazon Checkout B
 <ul><li>Initial Release</li><ul>
 
         </div>
-        
+
     </div>
     <div class="footer"><p>Copyright © 2004 - 2023 <a href="https://www.zen-cart-pro.at" target="_blank">www.zen-cart-pro.at - Die deutsche Zen Cart Version</a><br>
 the art of e-commerce - übersetzt, angepasst und erweitert zur Verwendung im deutschsprachigen Raum</p></div>

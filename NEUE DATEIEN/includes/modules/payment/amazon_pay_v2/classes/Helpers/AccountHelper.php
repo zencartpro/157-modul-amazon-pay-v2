@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: AccountHelper.php 2023-03-22 07:42:16Z webchills $
+ * @version $Id: AccountHelper.php 2023-11-19 12:42:16Z webchills $
  */
 namespace ZencartAmazonPayV2;
 
@@ -85,7 +85,7 @@ class AccountHelper
 
     public function isLoggedIn()
     {
-        //return !empty($_SESSION['customer_id']);
+        
         return zen_is_logged_in();
     }
 
@@ -109,9 +109,6 @@ class AccountHelper
             if(ACCOUNT_DOB == 'true' && (empty($customer_result->fields['customers_dob']) || date('Y', strtotime($customer_result->fields['customers_dob'])) < 1900)){
                 return false;
             }
-            //if(strlen($customer_result->fields['customers_telephone']) < ENTRY_TELEPHONE_MIN_LENGTH && !(defined('ACCOUNT_TELEPHONE_OPTIONAL') && ACCOUNT_TELEPHONE_OPTIONAL === 'true')){
-            //    return false;
-            //}
             return true;
         }else{
             return null;
