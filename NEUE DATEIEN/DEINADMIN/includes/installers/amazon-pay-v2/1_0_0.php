@@ -10,7 +10,7 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: 1_0_0.php 2023-11-19 12:48:51Z webchills $
+ * @version $Id: 1_0_0.php 2023-12-09 14:53:51Z webchills $
  */
 
 
@@ -51,19 +51,19 @@ $db->Execute("CREATE TABLE IF NOT EXISTS " . TABLE_AMAZON_PAY_V2_TRANSACTIONS . 
   `reference` varchar(255) NOT NULL,
   `merchant_id` varchar(32) DEFAULT NULL,
   `mode` varchar(16) DEFAULT NULL,
-  `type` varchar(16) NOT NULL,
-  `time` datetime NOT NULL,
-  `expiration` datetime NOT NULL,
+  `type` varchar(16) NOT NULL,  
+  `time` datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
+  `expiration` datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
   `charge_amount` float NOT NULL,
-  `captured_amount` float NOT NULL,
-  `refunded_amount` float NOT NULL,
-  `currency` varchar(16) DEFAULT NULL,
+  `captured_amount` float NOT NULL DEFAULT '0',
+  `refunded_amount` float NOT NULL DEFAULT '0', 
+  `currency` varchar(16) DEFAULT 'EUR',
   `status` varchar(32) NOT NULL,
-  `last_change` datetime NOT NULL,
-  `last_update` datetime NOT NULL,
+  `last_change` datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
+  `last_update` datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
   `order_id` int(11) NOT NULL,
-  `customer_informed` tinyint(1) NOT NULL,
-  `admin_informed` tinyint(1) NOT NULL,
+  `customer_informed` tinyint(1) NOT NULL DEFAULT '0',
+  `admin_informed` tinyint(1) NOT NULL DEFAULT '0',
    PRIMARY KEY (`id`),
    KEY `reference` (`reference`),
    KEY `type` (`type`)
@@ -72,7 +72,7 @@ $db->Execute("CREATE TABLE IF NOT EXISTS " . TABLE_AMAZON_PAY_V2_TRANSACTIONS . 
 // create new logs table
 $db->Execute("CREATE TABLE IF NOT EXISTS " . TABLE_AMAZON_PAY_V2_LOG . " (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `time` datetime NOT NULL,
+  `time` datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
   `msg` varchar(255) NOT NULL,
   `ip` varchar(255) NOT NULL,
   `data` LONGTEXT DEFAULT NULL,
