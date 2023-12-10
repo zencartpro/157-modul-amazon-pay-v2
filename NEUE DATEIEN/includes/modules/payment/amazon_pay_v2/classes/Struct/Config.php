@@ -10,11 +10,11 @@
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: Config.php 2023-11-15 20:15:16Z webchills $
+ * @version $Id: Config.php 2023-12-10 08:21:16Z webchills $
  */
 namespace ZencartAmazonPayV2;
 
 class Config{
-    const PLUGIN_VERSION = '1.1.0';
+    const PLUGIN_VERSION = '1.2.0';
     const PLATFORM_NAME = 'zencart-german';    
 }
