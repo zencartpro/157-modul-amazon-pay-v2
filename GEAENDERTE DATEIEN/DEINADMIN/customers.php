@@ -1,11 +1,11 @@
 <?php
 /**
  * Zen Cart German Specific (158 code in 157 / zencartpro adaptations)
- * @copyright Copyright 2003-2023 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: customers.php for Amazon Pay V2 2023-12-14 10:35:51Z webchills $
+ * @version $Id: customers.php for Amazon Pay V2 2024-04-04 18:35:51Z webchills $
  */
 require 'includes/application_top.php';
 
@@ -990,7 +990,7 @@ if ($action === 'edit' || $action === 'update') {
                 <div class="col-sm-9 col-md-6">
 <?php
     if ($processed === true) {
-        if ($cInfo->customers_newsletter === '1') {
+        if ($cInfo->customers_newsletter === 1) {
             echo ENTRY_NEWSLETTER_YES;
         } else {
             echo ENTRY_NEWSLETTER_NO;
@@ -1000,7 +1000,7 @@ if ($action === 'edit' || $action === 'update') {
         echo zen_draw_pull_down_menu(
             'customers_newsletter',
             $newsletter_array,
-            ($cInfo->customers_newsletter === '1') ? '1' : '0',
+            ($cInfo->customers_newsletter === 1) ? '1' : '0',
             'class="form-control" id="customers_newsletter"'
         );
     }
@@ -1870,15 +1870,16 @@ if ($action === 'edit' || $action === 'update') {
             ];
             break;
         default:
-            $customer = new Customer($cInfo->customers_id);
             if (isset($_GET['search'])) {
                 $_GET['search'] = zen_output_string_protected($_GET['search']);
             }
             if (isset($cInfo) && is_object($cInfo)) {
+                $customer = new Customer($cInfo->customers_id);
+
                 $heading[] = [
                     'text' =>
                         '<h4>' .
-                            TABLE_HEADING_ID . $cInfo->customers_id . ' ' .
+                            TABLE_HEADING_ID . ' ' . $cInfo->customers_id . ' ' .
                             $cInfo->customers_firstname . ' ' . $cInfo->customers_lastname .
                         '</h4>' .
                         '<br>' .
@@ -2044,7 +2045,7 @@ if ($action === 'edit' || $action === 'update') {
                             FILENAME_ORDERS,
                             'cID=' . $cInfo->customers_id . '&oID=' . $order['orders_id'] . '&action=edit',
                             'NONSSL'
-                        ) . '" title="Purchased: ' . zen_date_short($order['date_purchased']) . ', status ' . $order['orders_status_name'] . '">' . $order['orders_id'] . '</a> ';
+                        ) . '" title="' . TEXT_PURCHASED . ' ' . zen_date_short($order['date_purchased']) . ' / ' . TEXT_ORDER_STATUS . ' ' . $order['orders_status_name'] . '">' . $order['orders_id'] . '</a> ';
                     }
                     if ($cInfo->number_of_orders > 5) {
                         $text .= ' ... ';

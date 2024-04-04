@@ -3,14 +3,14 @@
  * Zen Cart German Specific (158 code in 157 / zencartpro adaptations)
  * Checkout Shipping Page
  *
- * @copyright Copyright 2003-2023 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: header_php.php 2023-11-15 20:40:16Z webchills $
+ * @version $Id: header_php.php 2024-04-04 18:51:16Z webchills $
  */
 // This should be first line of the script:
 $zco_notifier->notify('NOTIFY_HEADER_START_CHECKOUT_SHIPPING_AMAZON');
@@ -320,14 +320,12 @@ if (isset($_SESSION['cart']->cartID)) {
 
   // check that the currently selected shipping method is still valid (in case a zone restriction has disabled it, etc)
   if (isset($_SESSION['shipping']['id'])) {
-    $checklist = array();
+    $checklist = [];
     foreach ($quotes as $key=>$val) {
-      if ($val['methods'] != '') {
+      if (is_array($val['methods'])) {
         foreach($val['methods'] as $key2=>$method) {
           $checklist[] = $val['id'] . '_' . $method['id'];
         }
-      } else {
-        // skip
       }
     }
     $checkval = $_SESSION['shipping']['id'];
