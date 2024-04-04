@@ -1,16 +1,16 @@
 <?php
 /**
  * Amazon Pay V2 for Zen Cart German 1.5.7
- * Copyright 2023 webchills (www.webchills.at)
+ * Copyright 2023-2024 webchills (www.webchills.at)
  * based on Amazon Pay for Modified by AlkimMedia (www.alkim.de)
  * (https://github.com/AlkimMedia/AmazonPay_Modified_2060)
- * Portions Copyright 2003-2023 Zen Cart Development Team
+ * Portions Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2.php 2023-11-15 19:52:16Z webchills $
+ * @version $Id: amazon_pay_v2.php 2024-04-04 19:52:16Z webchills $
  */
 
 require_once(DIR_FS_CATALOG . DIR_WS_MODULES . 'payment/amazon_pay_v2/amazon_pay_v2.php');
@@ -24,7 +24,11 @@ use AmazonPayApiSdkExtension\Struct\Price;
 use AmazonPayApiSdkExtension\Struct\StatusDetails;
 
 class amazon_pay_v2 extends base {
-
+     /**
+     * $_check is used to check the configuration key set up
+     * @var int
+     */
+    protected $_check;
     /**
      * $code determines the internal 'code' name used to designate "this" payment module
      *
@@ -55,6 +59,7 @@ class amazon_pay_v2 extends base {
    * $order_status determines the status assigned to orders paid-for using this module
    */
   public $order_status;
+  public $order_pending_status ;
   public $zone;
 
     /**

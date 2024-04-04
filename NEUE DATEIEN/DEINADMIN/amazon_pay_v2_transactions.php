@@ -1,16 +1,16 @@
 <?php
 /**
  * Amazon Pay V2 for Zen Cart German 1.5.7
- * Copyright 2023 webchills (www.webchills.at)
+ * Copyright 2023-2024 webchills (www.webchills.at)
  * based on Amazon Pay for Modified by AlkimMedia (www.alkim.de)
  * (https://github.com/AlkimMedia/AmazonPay_Modified_2060)
- * Portions Copyright 2003-2023 Zen Cart Development Team
+ * Portions Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
  * Dieses Modul ist DONATIONWARE
  * Wenn Sie es in Ihrem Zen Cart Shop einsetzen, spenden Sie für die Weiterentwicklung der deutschen Zen Cart Version auf
  * https://spenden.zen-cart-pro.at
- * @version $Id: amazon_pay_v2_transactions.php 2023-11-17 16:26:16Z webchills $
+ * @version $Id: amazon_pay_v2_transactions.php 2024-04-04 20:20:16Z webchills $
  */
 
   require('includes/application_top.php');
@@ -76,27 +76,7 @@
 <head>
     <?php require DIR_WS_INCLUDES . 'admin_html_head.php'; ?>
     <style>
-.supportinfo {
-font-size: 13px;
-margin: 0 0 20px 0;
-padding:0
-} 
-.supportinfo a {
-font-size: 13px;
 
-}  
-#btlogo{
-width:172px;
-height:40px;
-float:right;
-margin:5px 5px 5px 40px;
-} 
-#btsorter{
-width:500px;
-height:50px;
-float:right;
-margin:-50px 5px 0px 10px;
-} 
 </style>
 
 </head>
@@ -109,7 +89,7 @@ margin:-50px 5px 0px 10px;
     <h1><?php echo HEADING_ADMIN_TITLE; ?></h1>
     <!-- only show if the Amazon Pay V2 module is installed //-->
 <?php  if (defined('MODULE_PAYMENT_AMAZON_PAY_V2_STATUS')) { ?>
-<span id="btsorter"><?php
+<span id="amazonsorter"><?php
   $hidden_field = (isset($_GET['amazon_sort_order'])) ? zen_draw_hidden_field('amazon_sort_order', $_GET['amazon_sort_order']) : '';
   echo zen_draw_form('amazon_status', FILENAME_AMAZON_PAY_V2_TRANSACTIONS, '', 'get') . HEADING_AMAZON_STATUS . ' ' . zen_draw_pull_down_menu('amazon_status', array_merge([['id' => '', 'text' => TEXT_ALL_IPNS]], $amazon_statuses), $selected_status, 'onchange="this.form.submit();"') . zen_hide_session_id() . $hidden_field . '</form>';
   $hidden_field = (isset($_GET['amazon_status'])) ? zen_draw_hidden_field('amazon_status', $_GET['amazon_status']) : '';
